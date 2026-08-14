@@ -519,34 +519,19 @@ h1 .l2{display:flex;align-items:center;justify-content:center;gap:clamp(3px,1vw,
   html.cur-on,html.cur-on *{cursor:none!important}
 }
 #cursor{position:fixed;top:0;left:0;width:0;height:0;pointer-events:none;z-index:9999;display:none}
-.cur-dot{position:absolute;top:0;left:0;width:8px;height:8px;margin:-4px 0 0 -4px;background:var(--red);border-radius:2px;
-  transition:width .22s cubic-bezier(.3,0,.2,1),height .22s cubic-bezier(.3,0,.2,1),margin .22s cubic-bezier(.3,0,.2,1),
-  border-radius .22s,opacity .2s,background .2s,box-shadow .22s}
-.cur-cross{position:absolute;top:0;left:0;width:0;height:0}
-.cur-cross i{position:absolute;top:0;left:0;width:2px;height:9px;margin:-4.5px 0 0 -1px;background:var(--red);
-  border-radius:1px;opacity:0;transition:opacity .2s,transform .25s cubic-bezier(.3,0,.2,1)}
-.cur-cross i:nth-child(1){transform:translateY(-15px) scaleY(.4)}
-.cur-cross i:nth-child(2){transform:translateX(15px) rotate(90deg) scaleY(.4)}
-.cur-cross i:nth-child(3){transform:translateY(15px) scaleY(.4)}
-.cur-cross i:nth-child(4){transform:translateX(-15px) rotate(90deg) scaleY(.4)}
-.cur-play{position:absolute;top:0;left:0;width:0;height:0;opacity:0;transform:scale(.4);
-  transition:opacity .22s,transform .22s cubic-bezier(.3,0,.2,1)}
-.cur-play:before{content:"";position:absolute;top:-9px;left:-6px;width:0;height:0;
-  border-style:solid;border-width:9px 0 9px 14px;border-color:transparent transparent transparent #fff;
-  filter:drop-shadow(0 0 10px rgba(255,82,0,.85))}
+.cur-clap{position:absolute;top:0;left:0;width:34px;height:34px;margin:-17px 0 0 -17px;
+  transition:transform .22s cubic-bezier(.3,0,.2,1);filter:drop-shadow(0 6px 14px rgba(17,19,24,.35))}
+.cur-clap svg{display:block;width:100%;height:100%;overflow:visible}
+.clap-top{transform-origin:6px 15px;transition:transform .22s cubic-bezier(.34,1.4,.4,1)}
+.clap-spark{opacity:0;transition:opacity .2s}
 
-#cursor.on-link .cur-dot{width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:transparent;
-  box-shadow:inset 0 0 0 1.5px var(--red)}
-#cursor.on-link .cur-cross i{opacity:1}
-#cursor.on-link .cur-cross i:nth-child(1){transform:translateY(-13px) scaleY(1)}
-#cursor.on-link .cur-cross i:nth-child(2){transform:translateX(13px) rotate(90deg) scaleY(1)}
-#cursor.on-link .cur-cross i:nth-child(3){transform:translateY(13px) scaleY(1)}
-#cursor.on-link .cur-cross i:nth-child(4){transform:translateX(-13px) rotate(90deg) scaleY(1)}
+#cursor.on-link .cur-clap,#cursor.on-media .cur-clap{transform:scale(1.1)}
+#cursor.on-link .clap-top,#cursor.on-media .clap-top{transform:rotate(-16deg)}
+#cursor.on-media .clap-top{transform:rotate(-26deg)}
+#cursor.on-link .clap-spark,#cursor.on-media .clap-spark{opacity:1}
 
-#cursor.on-media .cur-dot{opacity:0}
-#cursor.on-media .cur-play{opacity:1;transform:scale(1)}
-
-#cursor.down .cur-dot{transform:scale(.72)}
+#cursor.down .cur-clap{transform:scale(.92)}
+#cursor.down .clap-top{transform:rotate(6deg);transition:transform .09s cubic-bezier(.3,0,.2,1)}
 
 .cur-burst{position:fixed;top:0;left:0;width:0;height:0;pointer-events:none;z-index:9998}
 .cur-burst i{position:absolute;top:0;left:0;width:2px;height:8px;margin:-4px 0 0 -1px;background:var(--red);
@@ -810,7 +795,7 @@ h1 .l2{display:flex;align-items:center;justify-content:center;gap:clamp(3px,1vw,
   <div class="wrap">
     <div class="ct-head reveal">
       <p class="kicker">CONTACT US</p>
-      <h2>지금, 어썸엔터테인먼트와 함께<br>새로운 가능성을 시작해보세요.</h2>
+      <h2>지금, OOO과 함께<br>새로운 가능성을 시작해보세요.</h2>
       <div class="ct-tools">
         <button class="mailbtn" id="mailbtn" data-mail="awesomead@awesomeent.kr">
           awesomead@awesomeent.kr <small>메일 주소 복사</small>
@@ -884,9 +869,26 @@ h1 .l2{display:flex;align-items:center;justify-content:center;gap:clamp(3px,1vw,
 <a class="fab" id="fab" href="#contact">견적 문의하기 →</a>
 
 <div id="cursor" aria-hidden="true">
-  <span class="cur-dot"></span>
-  <span class="cur-cross"><i></i><i></i><i></i><i></i></span>
-  <span class="cur-play"></span>
+  <span class="cur-clap">
+    <svg viewBox="0 0 34 34">
+      <rect x="1" y="1" width="32" height="32" rx="9" fill="#111318"/>
+      <rect x="7" y="17" width="20" height="10" rx="2" fill="#FF5200"/>
+      <g class="clap-top">
+        <rect x="6" y="8" width="21" height="7" rx="1.6" fill="#fff"/>
+        <rect x="6" y="8" width="21" height="7" rx="1.6" fill="url(#clapStripes)"/>
+      </g>
+      <g class="clap-spark">
+        <line x1="24" y1="6" x2="27" y2="2" stroke="#FF5200" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="27.5" y1="8" x2="32" y2="7" stroke="#FF5200" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="26" y1="11" x2="29" y2="14" stroke="#FF5200" stroke-width="1.6" stroke-linecap="round"/>
+      </g>
+      <defs>
+        <pattern id="clapStripes" width="6" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+          <rect width="3" height="7" fill="#111318"/>
+        </pattern>
+      </defs>
+    </svg>
+  </span>
 </div>
 
 <script>
