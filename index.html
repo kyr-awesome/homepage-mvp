@@ -518,11 +518,12 @@ h1 .l2{display:flex;align-items:center;justify-content:center;gap:clamp(3px,1vw,
 @media(pointer:fine){
   html.cur-on,html.cur-on *{cursor:none!important}
 }
-#cursor{position:fixed;top:0;left:0;width:0;height:0;pointer-events:none;z-index:9999;display:none}
-.cur-hand{position:absolute;top:0;left:0;width:81px;height:54px;margin:-12px 0 0 -17px;
+#cursor{position:fixed;top:0;left:0;width:0;height:0;pointer-events:none!important;z-index:9999;display:none}
+#cursor *{pointer-events:none!important}
+.cur-hand{position:absolute;top:0;left:0;width:47px;height:31px;margin:-6px 0 0 -9px;
   transform-origin:19% 20%;transform:scaleX(-1) rotate(-35deg);
   transition:transform .22s cubic-bezier(.34,1.4,.4,1);
-  filter:drop-shadow(0 6.75px 13.5px rgba(17,19,24,.35))}
+  filter:drop-shadow(0 4px 8px rgba(17,19,24,.35))}
 .hp-out,.hp-fill{position:absolute;inset:0;
   -webkit-mask-image:var(--hp);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;
   mask-image:var(--hp);mask-size:contain;mask-repeat:no-repeat;mask-position:center}
