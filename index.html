@@ -1,0 +1,1448 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OND 크리에이티브 | 유튜브 제작대행</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<style>
+:root{
+  --ink:#111318;--ink-60:rgba(17,19,24,.60);--ink-38:rgba(17,19,24,.38);
+  --paper:#FBFAF8;--line:rgba(17,19,24,.10);--red:#FF5200;--nav-h:64px;
+  --font:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+*,*:before,*:after{font-family:var(--font)}
+button,input,textarea,select{font:inherit}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;
+  width:100%;height:var(--nav-h);display:flex;align-items:center;
+  padding:0 24px;border-radius:0;background:var(--red);
+  border-bottom:1px solid rgba(255,255,255,.18);
+  box-shadow:0 1px 2px rgba(17,19,24,.06),0 12px 32px -12px rgba(17,19,24,.18);
+  transition:box-shadow .3s,background .3s}
+.nav.solid{background:#E04800;box-shadow:0 1px 2px rgba(17,19,24,.08),0 14px 36px -14px rgba(17,19,24,.26)}
+#about,#service,#work2,#contact{scroll-margin-top:calc(var(--nav-h) + 20px)}
+
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:17px;letter-spacing:-.03em;margin-right:28px;text-decoration:none;color:#fff}
+.logo i{width:22px;height:22px;border-radius:7px;background:#fff;display:grid;place-items:center;flex:none}
+.logo i:after{content:"";border-left:6px solid var(--red);border-top:4px solid transparent;border-bottom:4px solid transparent;margin-left:2px}
+.nav a.item{color:rgba(255,255,255,.86);text-decoration:none;font-size:16.5px;font-weight:700;padding:9px 15px;border-radius:999px;transition:.18s;letter-spacing:-.02em}
+.nav a.item:hover{color:#fff;background:rgba(255,255,255,.16)}
+.nav .spacer{flex:1}
+.tel{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;
+  font-size:14.5px;font-weight:800;letter-spacing:-.02em;padding:9px 12px;border-radius:999px;transition:.18s}
+.tel:hover{background:rgba(255,255,255,.16)}
+.tel svg{width:15px;height:15px;color:#fff}
+.btn-cta{display:inline-flex;align-items:center;gap:7px;background:var(--ink);color:#fff;text-decoration:none;
+  font-weight:700;font-size:14.5px;letter-spacing:-.02em;padding:12px 20px;border-radius:999px;transition:.2s;white-space:nowrap}
+.btn-cta:hover{background:#E04800;transform:translateY(-1px)}
+.btn-cta .dot{width:6px;height:6px;border-radius:50%;background:var(--red);transition:.2s}
+.btn-cta:hover .dot{background:#fff}
+
+/* hero */
+.hero{padding:200px 0 0;text-align:center;position:relative}
+.hero:before{content:"";position:absolute;inset:0 0 auto;height:520px;z-index:-1;
+  background:radial-gradient(120% 78% at 50% -14%,rgba(255,82,0,.09),transparent 62%)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:var(--ink-60);
+  border:1px solid var(--line);background:#fff;padding:8px 15px 8px 11px;border-radius:999px;margin-bottom:26px}
+.eyebrow b{color:var(--red);font-weight:800}
+.live{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,82,0,.5);animation:pulse 2.2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(255,82,0,0)}100%{box-shadow:0 0 0 0 rgba(255,82,0,0)}}
+
+h1{font-size:clamp(29px,5.2vw,58px);line-height:1.3;letter-spacing:-.045em;font-weight:800}
+h1 .l2{display:flex;align-items:center;justify-content:center;gap:clamp(3px,1vw,12px);margin-top:8px;flex-wrap:nowrap}
+.slot{position:relative;height:1.3em;overflow:hidden;width:clamp(200px,34vw,410px)}
+.slot ul{list-style:none;transition:transform .55s cubic-bezier(.65,0,.2,1)}
+.slot li{height:1.3em;line-height:1.3em;color:var(--red);white-space:nowrap;text-align:center}
+.arw{width:clamp(30px,3.4vw,40px);height:clamp(30px,3.4vw,40px);flex:none;border:1px solid var(--line);
+  background:#fff;border-radius:50%;cursor:pointer;display:grid;place-items:center;color:var(--ink-38);transition:.18s}
+.arw:hover{color:var(--ink);border-color:var(--ink);transform:scale(1.06)}
+.arw svg{width:15px;height:15px}
+
+/* progress dots */
+.dots{display:flex;gap:7px;justify-content:center;margin-top:38px}
+.dots button{width:26px;height:3px;border:0;padding:0;border-radius:2px;background:rgba(17,19,24,.14);cursor:pointer;overflow:hidden;position:relative}
+.dots button.on{background:rgba(17,19,24,.14)}
+.dots button.on:after{content:"";position:absolute;inset:0;background:var(--red);transform-origin:left;animation:fill 5s linear forwards}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* media rail */
+.rail{margin-top:44px;margin-bottom:0;position:relative;min-height:clamp(200px,26vw,300px)}
+.rail:before,.rail:after{content:"";position:absolute;top:0;bottom:0;width:12vw;z-index:5;pointer-events:none}
+.rail:before{left:0;background:linear-gradient(90deg,var(--paper),transparent)}
+.rail:after{right:0;background:linear-gradient(270deg,var(--paper),transparent)}
+.track{display:flex;gap:18px;width:max-content;animation:slide 40s linear infinite;transition:opacity .32s ease}
+.track.out{opacity:0}
+.rail:hover .track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+.card{width:min(320px,64vw);flex:none;border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--line);
+  box-shadow:0 2px 4px rgba(17,19,24,.03),0 18px 34px -22px rgba(17,19,24,.28);
+  transition:transform .3s cubic-bezier(.3,0,.2,1),box-shadow .3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 26px 44px -22px rgba(17,19,24,.34)}
+.media{aspect-ratio:16/9;position:relative;background:#EDEBE7;display:grid;place-items:center;overflow:hidden}
+.media img,.media video{width:100%;height:100%;object-fit:cover;display:block}
+/* 소스 비었을 때 보이는 자리표시 */
+.ph{position:absolute;inset:8px;border:1.5px dashed rgba(17,19,24,.22);border-radius:10px;
+  display:grid;place-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--ink-38);letter-spacing:-.01em;text-align:center;padding:10px}
+.ph code{font-size:11px;font-weight:600;color:rgba(17,19,24,.28);font-family:var(--font)}
+.meta{padding:13px 14px 15px;text-align:left}
+.meta b{display:block;font-size:14.5px;font-weight:700;letter-spacing:-.025em;line-height:1.42}
+.meta p{margin-top:5px;font-size:12.5px;color:var(--ink-38);font-weight:500}
+
+/* fab: 우측 직사각형 문의하기 (주황) */
+.fab-side{position:fixed;right:0;top:54%;transform:translateY(-50%) translateX(100%);z-index:70;
+  display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;text-orientation:mixed;
+  color:#fff;text-decoration:none;font-weight:800;font-size:23px;letter-spacing:.13em;
+  padding:42px 21px;border-radius:10px 0 0 10px;
+  border:2px solid transparent;
+  background:linear-gradient(var(--red),var(--red)) padding-box,
+    linear-gradient(155deg,#fff1e8,#ffb27a 45%,#FF5200 100%) border-box;
+  box-shadow:0 10px 30px -10px rgba(255,82,0,.55),0 0 20px -4px rgba(255,178,122,.55);
+  transition:transform .4s cubic-bezier(.3,0,.2,1),background .2s,box-shadow .4s;
+  animation:fabGlow 2.6s ease-in-out infinite;pointer-events:none}
+.fab-side.on{transform:translateY(-50%) translateX(0);pointer-events:auto}
+.fab-side:hover{background:linear-gradient(var(--ink),var(--ink)) padding-box,
+    linear-gradient(155deg,#fff1e8,#ffb27a 45%,#FF5200 100%) border-box}
+
+@keyframes fabGlow{
+  0%,100%{box-shadow:0 10px 30px -10px rgba(255,82,0,.55),0 0 18px -4px rgba(255,178,122,.45)}
+  50%{box-shadow:0 10px 34px -8px rgba(255,82,0,.68),0 0 30px -2px rgba(255,178,122,.85)}
+}
+
+/* fab: 하단 둥근 캡슐형 플로팅 배너 (검정) */
+.fab-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:69;max-width:760px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;padding:18px 32px;
+  border-radius:999px;
+  border:2px solid transparent;
+  background:linear-gradient(var(--ink),var(--ink)) padding-box,
+    linear-gradient(155deg,#fff1e8,#ffb27a 45%,#FF5200 100%) border-box;
+  box-shadow:0 18px 44px -16px rgba(17,19,24,.5),0 0 20px -4px rgba(255,178,122,.55);
+  transform:translateY(140%);transition:transform .45s cubic-bezier(.3,0,.2,1),box-shadow .4s;
+  animation:fabGlow 2.6s ease-in-out infinite;
+  pointer-events:none}
+.fab-bar.on{transform:translateY(0);pointer-events:auto}
+.fab-bar p{margin:0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;
+  font-size:clamp(13.5px,1.6vw,16px);font-weight:700;letter-spacing:-.02em}
+.fab-bar p b{color:var(--red);font-weight:800}
+.fab-bar-cta{background:var(--red);color:#fff;text-decoration:none;font-weight:800;font-size:clamp(15px,1.8vw,17px);
+  padding:13px 19px;border-radius:999px;transition:.2s;white-space:nowrap}
+.fab-bar-cta:hover{background:#fff;color:var(--ink)}
+
+@media(max-width:720px){
+  :root{--nav-h:56px}
+  .nav{padding:0 8px 0 16px}
+  .nav a.item{display:none}
+  .hero{padding-top:140px}
+  h1 .l2{gap:2px}
+  .fab-side{padding:30px 15px;font-size:17px}
+  .fab-bar{left:10px;right:10px;bottom:10px;padding:14px 22px}
+  .fab-bar-cta{padding:11px 16px}
+}
+/* ── pain section ── */
+.pain{background:var(--ink);color:#fff;margin-top:0;padding:clamp(80px,10vw,128px) 0;position:relative;overflow:hidden}
+.pain:before{content:"";position:absolute;inset:auto 0 0;height:70%;
+  background:radial-gradient(70% 100% at 50% 100%,rgba(255,82,0,.16),transparent 70%);pointer-events:none}
+.pain .wrap{position:relative}
+.pain-head{text-align:center;max-width:720px;margin:0 auto clamp(44px,5vw,64px)}
+.pain-head h2{font-size:clamp(24px,3.8vw,42px);font-weight:800;letter-spacing:-.045em;line-height:1.34}
+.pain-head p{margin-top:16px;font-size:clamp(14.5px,1.6vw,17px);line-height:1.7;color:rgba(255,255,255,.56);font-weight:500;letter-spacing:-.02em}
+.pain-head p b{color:#fff;font-weight:700}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,20px)}
+.pcard{
+  background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.10);
+  border-radius:18px;padding:clamp(24px,2.6vw,32px);
+  transition:transform .3s cubic-bezier(.3,0,.2,1),background .3s,border-color .3s;
+}
+.pcard:hover{transform:translateY(-6px);background:rgba(255,255,255,.075);border-color:rgba(255,82,0,.45)}
+.pcard-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:clamp(28px,3vw,42px)}
+.pcard h3{font-size:clamp(19px,2.2vw,24px);font-weight:800;letter-spacing:-.04em;color:var(--red)}
+.pcard svg{width:clamp(30px,3.2vw,38px);height:clamp(30px,3.2vw,38px);flex:none;color:rgba(255,255,255,.72)}
+.pcard p{font-size:clamp(14px,1.5vw,15.5px);line-height:1.68;color:rgba(255,255,255,.72);letter-spacing:-.02em;font-weight:500}
+.pcard p em{font-style:normal;color:#fff;font-weight:700}
+
+/* ── solution ── */
+@media(max-width:860px){.cards{grid-template-columns:1fr;gap:12px}
+  .pcard-top{margin-bottom:18px}}
+.pain{padding-bottom:clamp(96px,11vw,150px)}
+.sol{background:var(--paper);padding:clamp(64px,7vw,96px) 0 clamp(80px,10vw,128px);position:relative}
+.sol:before{content:"";position:absolute;top:-1px;left:50%;transform:translateX(-50%);
+  width:clamp(120px,14vw,180px);height:clamp(30px,3.4vw,44px);background:var(--ink);
+  clip-path:polygon(0 0,100% 0,50% 100%);border-radius:0 0 10px 10px}
+.sol h2{text-align:center;font-size:clamp(22px,3.2vw,34px);font-weight:800;letter-spacing:-.045em;
+  margin:clamp(28px,3.4vw,44px) 0 clamp(36px,4.4vw,56px)}
+.sol h2 b{color:var(--red)}
+
+.bento{display:grid;grid-template-columns:1.05fr 1.35fr 1.25fr;gap:clamp(12px,1.4vw,18px);align-items:stretch}
+.bcol{display:grid;gap:clamp(12px,1.4vw,18px)}
+.b{border-radius:18px;overflow:hidden;position:relative;min-height:180px;
+  transition:transform .3s cubic-bezier(.3,0,.2,1),box-shadow .3s}
+.b:hover{transform:translateY(-5px);box-shadow:0 26px 44px -24px rgba(17,19,24,.35)}
+.b h3{font-size:clamp(19px,2.1vw,26px);font-weight:800;letter-spacing:-.04em;line-height:1.36}
+.b p{margin-top:10px;font-size:14px;line-height:1.66;font-weight:500;letter-spacing:-.02em}
+
+.b-red{background:var(--red);color:#fff;padding:clamp(24px,2.6vw,32px);display:flex;flex-direction:column;justify-content:space-between}
+.b-red p{color:rgba(255,255,255,.82)}
+.ch-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,22px);margin-top:clamp(20px,2.2vw,28px)}
+.ch{display:grid;place-items:center;padding:4px}
+.ch img{max-width:100%;max-height:64px;width:auto;height:auto;object-fit:contain;
+  transition:transform .25s}
+.ch:hover img{transform:translateY(-3px) scale(1.05)}
+@media(max-width:640px){.ch-grid{grid-template-columns:repeat(4,1fr)}.ch img{max-height:44px}}
+
+.b-dark{background:var(--ink);color:#fff;padding:clamp(22px,2.4vw,30px);display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.b-dark p{color:rgba(255,255,255,.6)}
+.b-dark .flow{display:flex;flex-wrap:wrap;gap:6px}
+.b-dark .flow span{font-size:12px;font-weight:700;letter-spacing:-.01em;color:rgba(255,255,255,.82);
+  border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 11px}
+
+.b-media{background:#EDEBE7;min-height:clamp(190px,22vw,260px)}
+.b-media img,.b-media video{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
+.b-media .cap{position:absolute;left:0;right:0;top:0;padding:clamp(20px,2.2vw,28px);z-index:2;color:#fff;
+  background:linear-gradient(180deg,rgba(17,19,24,.72),transparent)}
+.b-media .cap h3{color:#fff}
+.b-media .cap h3 em{font-style:normal;color:var(--red)}
+
+/* orbit */
+.b-orbit{background:none;border:0;box-shadow:none;display:grid;place-items:center;padding:0;overflow:visible;min-height:0}
+.b-orbit:hover{transform:none;box-shadow:none}
+.orbit{position:relative;width:112%;aspect-ratio:680/500;max-width:none;
+  perspective:900px;cursor:grab;touch-action:none}
+.orbit:active{cursor:grabbing}
+.orbit-stage{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.3,0,.2,1)}
+.orbit-svg text{font-family:var(--font)}
+.orbit-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.orbit-svg .ring{fill:none;stroke:#ffd6bd;stroke-width:1;stroke-dasharray:3 5}
+.orbit-svg .link{stroke:#ffb27a;stroke-width:1;stroke-dasharray:2 4;transition:stroke .3s,stroke-width .3s}
+.orbit-svg .link.hot{stroke:#FF5200;stroke-width:1.8;stroke-dasharray:none}
+.orbit-svg .pin{fill:#FF5200;transition:r .3s}
+
+.globe{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);
+  width:28%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;z-index:20;
+  background:radial-gradient(circle at 35% 30%,#fff1e8 0%,#ffb27a 55%,#FF5200 100%);
+  box-shadow:0 18px 46px -14px rgba(255,82,0,.55),inset 0 0 0 1px #ff8a4d;
+  animation:breathe 6s ease-in-out infinite}
+@keyframes breathe{50%{box-shadow:0 22px 56px -14px rgba(255,82,0,.72),inset 0 0 0 1px #ff8a4d}}
+.globe:after{content:"";position:absolute;inset:-14%;border-radius:50%;
+  border:1px solid rgba(255,82,0,.18);animation:halo 4s ease-out infinite}
+@keyframes halo{0%{transform:scale(.9);opacity:.9}100%{transform:scale(1.25);opacity:0}}
+.globe b{display:block;font-size:clamp(14px,1.6vw,17px);font-weight:800;letter-spacing:-.03em;color:#fff8f3}
+.globe span{display:block;margin-top:3px;font-size:clamp(9px,.95vw,10.5px);font-weight:600;color:#ffe3d1;letter-spacing:-.01em}
+
+.onode{position:absolute;transform:translate(-50%,-50%);background:#fff;border:1px solid #ffd6bd;
+  border-radius:14px;padding:9px 14px;font-size:clamp(11px,1.15vw,12.5px);font-weight:700;color:#c23e00;
+  letter-spacing:-.02em;white-space:nowrap;box-shadow:0 8px 20px -10px rgba(194,62,0,.35);
+  will-change:transform,opacity;transition:background .25s,color .25s,border-color .25s,box-shadow .25s}
+.onode.hot{background:#FF5200;color:#fff;border-color:#FF5200;box-shadow:0 12px 28px -8px rgba(255,82,0,.6)}
+
+@media(max-width:980px){
+  .bento{grid-template-columns:1fr 1fr}
+  .b-orbit{grid-column:1/-1}
+}
+@media(max-width:640px){
+  .bento{grid-template-columns:1fr}
+  .b-red{min-height:200px}
+}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
+
+/* ── 스크롤 리빌 ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.3,0,.2,1),transform .7s cubic-bezier(.3,0,.2,1)}
+.reveal.on{opacity:1;transform:none}
+
+/* ── proof / numbers ── */
+.pv{padding:clamp(72px,9vw,110px) 0 clamp(80px,10vw,120px);background:var(--paper);overflow:hidden}
+.pv-head{text-align:center;font-size:clamp(21px,3vw,32px);font-weight:800;letter-spacing:-.045em;line-height:1.46;
+  max-width:820px;margin:0 auto clamp(40px,5vw,60px)}
+.pv-head u{text-decoration:none;position:relative;white-space:nowrap}
+.pv-head u:after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2.5px;background:#FF5200;border-radius:2px}
+.pv-head small{display:block;margin-top:14px;font-size:clamp(14px,1.6vw,16.5px);font-weight:500;color:var(--ink-60);letter-spacing:-.02em;line-height:1.7}
+
+.band{background:#FF5200;color:#fff;padding:clamp(38px,4.6vw,58px) 24px}
+.band-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+.band strong{display:block;font-size:clamp(22px,3.4vw,38px);font-weight:800;letter-spacing:-.045em;
+  font-variant-numeric:tabular-nums;line-height:1.2}
+.band strong em{font-style:normal;font-size:.48em;font-weight:700;margin-left:3px;letter-spacing:-.02em}
+.band p{margin-top:10px;font-size:clamp(11.5px,1.2vw,13px);font-weight:600;color:rgba(255,255,255,.8);letter-spacing:-.01em}
+
+.voice{margin-top:clamp(44px,5vw,64px);position:relative}
+.voice:before,.voice:after{content:"";position:absolute;top:0;bottom:0;width:10vw;z-index:5;pointer-events:none}
+.voice:before{left:0;background:linear-gradient(90deg,var(--paper),transparent)}
+.voice:after{right:0;background:linear-gradient(270deg,var(--paper),transparent)}
+.vtrack{display:flex;gap:clamp(12px,1.4vw,18px);width:max-content;animation:slide 52s linear infinite}
+.voice:hover .vtrack{animation-play-state:paused}
+.vcard{width:min(320px,72vw);flex:none;background:#EFEDE9;border-radius:16px;padding:clamp(20px,2.2vw,26px);
+  transition:transform .3s cubic-bezier(.3,0,.2,1),background .3s}
+.vcard:hover{transform:translateY(-5px);background:#fff;box-shadow:0 22px 40px -24px rgba(17,19,24,.35)}
+.vcard h4{font-size:clamp(15px,1.7vw,17.5px);font-weight:800;letter-spacing:-.035em;padding-bottom:14px;
+  border-bottom:1px solid rgba(17,19,24,.10);margin-bottom:14px}
+.vcard p{font-size:13.5px;line-height:1.72;color:var(--ink-60);font-weight:500;letter-spacing:-.02em}
+.vcard p b{color:var(--ink);font-weight:700}
+
+@media(max-width:720px){
+  .band-in{grid-template-columns:1fr;gap:26px}
+}
+
+/* ── process ── */
+.proc{padding:clamp(76px,9vw,116px) 0;background:#fff;border-top:1px solid var(--line)}
+.proc h2{text-align:center;font-size:clamp(22px,3.2vw,34px);font-weight:800;letter-spacing:-.045em;line-height:1.42}
+.proc h2 b{color:#FF5200}
+.proc .lead{text-align:center;margin:16px auto 0;max-width:640px;font-size:clamp(14px,1.55vw,16px);
+  line-height:1.72;color:var(--ink-60);font-weight:500;letter-spacing:-.02em}
+
+.steps{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:clamp(36px,4.4vw,52px) 0 clamp(28px,3vw,40px)}
+.step{position:relative;border:1px solid var(--line);background:var(--paper);border-radius:999px;
+  padding:12px 20px 12px 16px;font-size:clamp(13px,1.4vw,15px);font-weight:700;letter-spacing:-.025em;
+  color:var(--ink-60);cursor:pointer;display:inline-flex;align-items:center;gap:9px;transition:.22s cubic-bezier(.3,0,.2,1)}
+.step em{font-style:normal;font-size:11.5px;font-weight:800;color:var(--ink-38);
+  background:#fff;border:1px solid var(--line);border-radius:50%;width:21px;height:21px;
+  display:grid;place-items:center;transition:.22s}
+.step:hover{color:var(--ink);border-color:rgba(17,19,24,.28)}
+.step.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.step.on em{background:#FF5200;border-color:#FF5200;color:#fff}
+
+.panel{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(18px,2.4vw,32px);align-items:stretch;
+  opacity:1;transition:opacity .3s ease}
+.panel.out{opacity:0}
+.panel-media{border-radius:18px;background:#EDEBE7;aspect-ratio:16/9;position:relative;overflow:hidden}
+.panel-media img,.panel-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.panel-body{display:flex;flex-direction:column;justify-content:center;padding:clamp(6px,1vw,18px) 4px}
+.panel-body .tag{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;font-size:12px;font-weight:800;
+  color:#FF5200;background:rgba(255,82,0,.09);border-radius:999px;padding:7px 13px;letter-spacing:-.01em}
+.panel-body h3{margin-top:16px;font-size:clamp(21px,2.6vw,30px);font-weight:800;letter-spacing:-.045em}
+.panel-body p{margin-top:14px;font-size:clamp(14.5px,1.6vw,17px);line-height:1.74;color:var(--ink-60);
+  font-weight:500;letter-spacing:-.02em}
+.panel-body .bar{margin-top:24px;height:3px;border-radius:2px;background:rgba(17,19,24,.08);overflow:hidden}
+.panel-body .bar i{display:block;height:100%;background:#FF5200;border-radius:2px;transition:width .45s cubic-bezier(.3,0,.2,1)}
+
+@media(max-width:820px){
+  .panel{grid-template-columns:1fr}
+  .steps{gap:6px}
+  .step{padding:10px 15px 10px 12px}
+}
+
+/* ── studio carousel (제작 탭) ── */
+.panel.wide{grid-template-columns:1fr;gap:0}
+.studio{text-align:center}
+.studio h3{font-size:clamp(20px,2.7vw,30px);font-weight:800;letter-spacing:-.045em;line-height:1.4}
+.studio h3 b{color:#FF5200}
+.studio .desc{margin:14px auto 0;max-width:620px;font-size:clamp(13px,1.45vw,15px);line-height:1.78;
+  color:var(--ink-60);font-weight:500;letter-spacing:-.02em}
+.stage{position:relative;margin-top:clamp(26px,3.2vw,40px);background:var(--ink);
+  border-radius:clamp(12px,1.4vw,18px);padding:clamp(10px,1.2vw,16px);overflow:hidden}
+.stage-view{overflow:hidden}
+.stage-track{display:flex;gap:clamp(8px,1vw,14px);transition:transform .55s cubic-bezier(.3,0,.2,1)}
+.slide{flex:none;width:calc((100% - clamp(16px,2vw,28px))/3);aspect-ratio:4/3.4;
+  background:#C9C7C3;border-radius:8px;position:relative;overflow:hidden;
+  display:grid;place-items:center;transition:opacity .4s}
+.slide img,.slide video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slide span{position:relative;z-index:2;font-size:clamp(13px,1.5vw,16px);font-weight:800;letter-spacing:-.03em;color:#4A4844}
+.slide.dim{opacity:.42}
+.stage-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:clamp(16px,1.8vw,22px)}
+.stage-nav button{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:#fff;
+  cursor:pointer;display:grid;place-items:center;color:var(--ink-60);transition:.18s}
+.stage-nav button:hover{color:var(--ink);border-color:var(--ink)}
+.stage-nav button:disabled{opacity:.32;cursor:default}
+.stage-nav svg{width:14px;height:14px}
+.stage-nav .count{font-size:14px;font-weight:800;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.stage-nav .count i{font-style:normal;color:var(--ink-38);font-weight:700}
+
+@media(max-width:820px){
+  .slide{width:calc((100% - clamp(8px,1vw,14px))/2)}
+}
+@media(max-width:560px){
+  .slide{width:100%}
+}
+
+/* ── clients ── */
+.clients{background:var(--ink);padding:clamp(56px,6.5vw,84px) 0;overflow:hidden}
+.clients h2{text-align:center;color:#fff;font-size:clamp(16px,2vw,22px);font-weight:700;
+  letter-spacing:-.035em;margin-bottom:clamp(28px,3.4vw,42px)}
+.clients h2 b{color:#FF5200;font-weight:800}
+.logos{position:relative}
+.logos:before,.logos:after{content:"";position:absolute;top:0;bottom:0;width:12vw;z-index:5;pointer-events:none}
+.logos:before{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+.logos:after{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+.ltrack{display:flex;gap:clamp(10px,1.2vw,16px);width:max-content;animation:slide 34s linear infinite}
+.logos:hover .ltrack{animation-play-state:paused}
+.lbox{flex:none;width:clamp(150px,16vw,200px);background:#fff;border-radius:10px;padding:14px 12px 12px;
+  display:flex;flex-direction:column;align-items:center;gap:9px;overflow:hidden;
+  opacity:.82;transition:opacity .3s,transform .3s}
+.lbox:hover{opacity:1;transform:translateY(-4px)}
+.lbox .lname{font-size:clamp(12px,1.3vw,13.5px);font-weight:800;letter-spacing:-.035em;
+  color:#26241F;text-align:center;line-height:1.34}
+.lbox .lmark{width:100%;aspect-ratio:16/7;display:grid;place-items:center;overflow:hidden}
+.lbox .lmark img{max-width:100%;max-height:100%;object-fit:contain}
+.lbox .lmark .slot{width:100%;height:100%;border:1.5px dashed rgba(17,19,24,.18);border-radius:7px;
+  display:grid;place-items:center;font-size:11px;font-weight:700;color:rgba(17,19,24,.30);letter-spacing:-.02em}
+
+/* ── portfolio ── */
+.port{padding:clamp(72px,9vw,110px) 0;background:var(--paper)}
+.port h2{text-align:center;font-size:clamp(22px,3.2vw,34px);font-weight:800;letter-spacing:-.045em;line-height:1.42}
+.port h2 b{color:#FF5200}
+.port .lead{text-align:center;margin:14px auto 0;max-width:600px;font-size:clamp(13.5px,1.5vw,15.5px);
+  line-height:1.74;color:var(--ink-60);font-weight:500;letter-spacing:-.02em}
+
+.tabs{position:relative;margin:clamp(32px,4vw,48px) 0 clamp(24px,2.8vw,34px);border-bottom:1px solid var(--line)}
+.tabs-scroll{display:flex;gap:clamp(14px,2vw,28px);overflow-x:auto;scrollbar-width:none;padding-bottom:0}
+.tabs-scroll::-webkit-scrollbar{display:none}
+.tab{flex:none;background:none;border:0;cursor:pointer;padding:12px 2px 14px;
+  font-size:clamp(14px,1.55vw,16px);font-weight:700;letter-spacing:-.03em;color:var(--ink-38);
+  position:relative;transition:color .2s;white-space:nowrap}
+.tab:hover{color:var(--ink-60)}
+.tab.on{color:var(--ink);font-weight:800}
+.tab.on:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2.5px;background:#FF5200;border-radius:2px}
+
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,auto);
+  gap:clamp(18px,2.2vw,28px) clamp(14px,1.6vw,20px);transition:opacity .28s ease}
+.pgrid.out{opacity:0}
+.pitem{cursor:pointer;transition:transform .3s cubic-bezier(.3,0,.2,1)}
+.pitem:hover{transform:translateY(-4px)}
+.pitem:hover .pthumb{box-shadow:0 22px 40px -22px rgba(17,19,24,.5)}
+.pthumb{aspect-ratio:16/9;background:#EDEBE7;position:relative;overflow:hidden;display:grid;place-items:center;
+  border-radius:12px;transition:box-shadow .3s}
+.pthumb img,.pthumb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pthumb .dur{position:absolute;right:7px;bottom:7px;z-index:2;background:rgba(0,0,0,.78);color:#fff;
+  font-size:11.5px;font-weight:700;padding:3px 6px;border-radius:5px;font-variant-numeric:tabular-nums}
+.pmeta{padding:11px 2px 0}
+.pmeta b{display:block;font-size:14.5px;font-weight:700;letter-spacing:-.03em;line-height:1.46;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pmeta p{margin-top:6px;font-size:12.5px;color:var(--ink-38);font-weight:600;letter-spacing:-.02em}
+.pmeta p span{color:rgba(17,19,24,.28);margin:0 5px}
+.pempty{grid-column:1/-1;text-align:center;padding:56px 0;color:var(--ink-38);font-size:14px;font-weight:600}
+
+@media(max-width:860px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.pgrid{grid-template-columns:1fr}}
+
+/* ── feature rows ── */
+.feat{background:var(--ink);color:#fff;padding:clamp(72px,9vw,116px) 0;overflow:hidden}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:center}
+.frow + .frow{margin-top:clamp(64px,8vw,110px)}
+.frow.rev .ftext{order:2}
+.ftext h3{font-size:clamp(21px,2.9vw,34px);font-weight:800;letter-spacing:-.045em;line-height:1.4}
+.ftext h3 b{color:#FF5200}
+.ftext p{margin-top:clamp(16px,1.8vw,22px);font-size:clamp(14px,1.55vw,16.5px);line-height:1.8;
+  color:rgba(255,255,255,.62);font-weight:500;letter-spacing:-.02em}
+.ftags{display:flex;flex-wrap:wrap;gap:7px;margin-top:clamp(20px,2.2vw,28px)}
+.ftags span{font-size:12.5px;font-weight:700;letter-spacing:-.02em;color:rgba(255,255,255,.86);
+  border:1px solid rgba(255,255,255,.20);border-radius:999px;padding:8px 14px;transition:.22s}
+.ftags span:hover{background:#FF5200;border-color:#FF5200;color:#fff}
+
+.fmedia{border-radius:14px;overflow:hidden;background:#2A2C33;aspect-ratio:4/3;position:relative}
+.fmedia img,.fmedia video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.fslide{border-radius:14px;overflow:hidden;background:#2A2C33;aspect-ratio:4/3;position:relative}
+.fslide-track{position:absolute;inset:0;display:flex;width:100%;height:100%;transition:transform .6s cubic-bezier(.65,0,.2,1);cursor:pointer}
+.fslide-track .fs-item{flex:none;width:100%;height:100%;position:relative}
+.fslide-track .fs-item img,.fslide-track .fs-item video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fslide-dots{position:absolute;left:0;right:0;bottom:12px;display:flex;gap:6px;justify-content:center;z-index:2}
+.fslide-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .25s,transform .25s}
+.fslide-dots span.on{background:#FF5200;transform:scale(1.25)}
+
+@media(max-width:820px){
+  .frow{grid-template-columns:1fr;gap:26px}
+  .frow.rev .ftext{order:0}
+}
+
+/* ── extra services ── */
+.extra{display:grid;grid-template-columns:1fr;background:var(--ink);overflow:hidden}
+.ex-left{background:#FF5200;color:#fff;padding:clamp(38px,4.6vw,68px) clamp(26px,3.4vw,56px);
+  display:flex;flex-direction:column;justify-content:center}
+.ex-left h2{font-size:clamp(24px,3.1vw,36px);font-weight:800;letter-spacing:-.045em;line-height:1.4}
+.ex-left .lead{margin-top:14px;font-size:clamp(15px,1.7vw,17.5px);line-height:1.72;
+  color:rgba(255,255,255,.86);font-weight:500;letter-spacing:-.02em}
+.ex-boxes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(9px,1vw,14px);margin-top:clamp(26px,3vw,40px)}
+.ex-b{border-radius:12px;padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;justify-content:center;
+  min-height:clamp(110px,12vw,165px);transition:transform .28s cubic-bezier(.3,0,.2,1)}
+.ex-b:hover{transform:translateY(-4px)}
+.ex-b h4{font-size:clamp(16px,1.9vw,19.5px);font-weight:800;letter-spacing:-.035em}
+.ex-b p{margin-top:9px;font-size:clamp(13px,1.4vw,14.5px);line-height:1.66;font-weight:500;letter-spacing:-.02em}
+.ex-b.tall{background:#fff;color:#26241F}
+.ex-b.tall p{color:rgba(38,36,31,.62)}
+.ex-b.dark{background:var(--ink);color:#fff}
+.ex-b.dark p{color:rgba(255,255,255,.56)}
+
+@media(max-width:820px){
+  .ex-boxes{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .ex-boxes{grid-template-columns:1fr}
+}
+
+/* ── contact ── */
+.contact{background:var(--paper);padding:clamp(76px,9vw,116px) 0 0;overflow:hidden}
+.ct-head{text-align:center}
+.ct-head .kicker{font-size:12.5px;font-weight:800;letter-spacing:.14em;color:#FF5200}
+.ct-head h2{margin-top:14px;font-size:clamp(22px,3.2vw,36px);font-weight:800;letter-spacing:-.045em;line-height:1.4}
+.ct-tools{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:clamp(26px,3vw,36px)}
+.mailbtn,.docbtn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;cursor:pointer;
+  font-size:14.5px;font-weight:700;letter-spacing:-.02em;padding:14px 22px;transition:.2s;text-decoration:none}
+.mailbtn{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.mailbtn:hover{border-color:var(--ink);transform:translateY(-1px)}
+.mailbtn small{font-size:12px;font-weight:700;color:var(--ink-38)}
+.mailbtn.done{border-color:#FF5200;color:#FF5200}
+.docbtn{background:var(--ink);border:1px solid var(--ink);color:#fff}
+.docbtn:hover{background:#FF5200;border-color:#FF5200;transform:translateY(-1px)}
+
+/* form */
+.form{max-width:820px;margin:clamp(56px,6.5vw,88px) auto 0;padding-bottom:clamp(64px,8vw,100px)}
+.fgroup{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.2vw,14px)}
+.fgroup + .fgroup{margin-top:clamp(10px,1.2vw,14px)}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12.5px;font-weight:800;letter-spacing:-.02em;color:var(--ink-60)}
+.field label i{font-style:normal;color:#FF5200;margin-left:3px}
+.field input,.field textarea,.field select{
+  width:100%;background:#fff;border:1px solid var(--line);border-radius:11px;padding:14px 15px;
+  font-size:14.5px;font-weight:500;letter-spacing:-.02em;color:var(--ink);transition:border-color .2s,box-shadow .2s;
+  -webkit-appearance:none;appearance:none}
+.field textarea{min-height:130px;resize:vertical;line-height:1.7}
+.field select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
+  background-repeat:no-repeat;background-position:right 15px center;padding-right:40px;cursor:pointer}
+.field input:focus,.field textarea:focus,.field select:focus{outline:0;border-color:#FF5200;box-shadow:0 0 0 3px rgba(255,82,0,.12)}
+.field input::placeholder,.field textarea::placeholder{color:rgba(17,19,24,.30);font-weight:500}
+.field .hint{font-size:11.5px;color:var(--ink-38);font-weight:600;letter-spacing:-.02em}
+
+.agree{display:flex;align-items:center;gap:9px;margin-top:clamp(18px,2vw,24px);
+  font-size:13px;font-weight:600;color:var(--ink-60);letter-spacing:-.02em;cursor:pointer}
+.agree input{width:17px;height:17px;accent-color:#FF5200;cursor:pointer;flex:none}
+.agree a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
+.submit{width:100%;margin-top:clamp(16px,1.8vw,22px);background:var(--ink);color:#fff;border:0;border-radius:12px;
+  padding:18px;font-size:16px;font-weight:800;letter-spacing:-.03em;cursor:pointer;transition:.2s}
+.submit:hover{background:#FF5200}
+.submit:disabled{background:rgba(17,19,24,.16);cursor:not-allowed}
+
+/* footer */
+.foot{background:var(--ink);color:#fff;padding:clamp(48px,5.6vw,72px) 0}
+.foot .desc{font-size:clamp(13px,1.45vw,15px);line-height:1.72;color:rgba(255,255,255,.62);font-weight:500;
+  letter-spacing:-.02em;max-width:640px}
+.foot .co{margin-top:22px;font-size:13px;font-weight:800;letter-spacing:-.03em}
+.foot .info{margin-top:10px;font-size:12.5px;line-height:1.9;color:rgba(255,255,255,.46);font-weight:500;letter-spacing:-.02em}
+.foot .info a{color:rgba(255,255,255,.7);text-decoration:none}
+.foot .info a:hover{color:#FF5200}
+.foot .site{display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-size:13.5px;font-weight:700;
+  color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:3px;transition:.2s}
+.foot .site:hover{color:#FF5200;border-color:#FF5200}
+
+@media(max-width:640px){
+  .fgroup{grid-template-columns:1fr}
+}
+
+/* ── custom cursor ── */
+@media(pointer:fine){
+  html.cur-on,html.cur-on *{cursor:none!important}
+}
+#cursor{position:fixed;top:0;left:0;width:0;height:0;pointer-events:none!important;z-index:9999;display:none}
+#cursor *{pointer-events:none!important}
+.cur-hand{position:absolute;top:0;left:0;width:47px;height:31px;margin:-6px 0 0 -9px;
+  transform-origin:19% 20%;transform:scaleX(-1) rotate(-35deg);
+  transition:transform .22s cubic-bezier(.34,1.4,.4,1);
+  filter:drop-shadow(0 4px 8px rgba(17,19,24,.35))}
+.hp-out,.hp-fill{position:absolute;inset:0;
+  -webkit-mask-image:var(--hp);-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;
+  mask-image:var(--hp);mask-size:contain;mask-repeat:no-repeat;mask-position:center}
+.hp-out{background:var(--red);transform:scale(1.22)}
+.hp-fill{background:#fff}
+
+#cursor.on-link .cur-hand,#cursor.on-media .cur-hand{transform:scaleX(-1) rotate(-29deg) scale(1.34)}
+#cursor.down .cur-hand{transform:scaleX(-1) rotate(-41deg) scale(.85);transition:transform .09s cubic-bezier(.3,0,.2,1)}
+
+/* 확장 클릭 판정 영역: 커서가 커도 버튼을 잘 맞힐 수 있도록 */
+.arw{position:relative}
+.arw:before{content:"";position:absolute;inset:-10px}
+.stage-nav button{position:relative}
+.stage-nav button:before{content:"";position:absolute;inset:-8px}
+.fslide-dots span{position:relative}
+.fslide-dots span:before{content:"";position:absolute;inset:-9px}
+
+.cur-burst{position:fixed;top:0;left:0;width:0;height:0;pointer-events:none;z-index:9998}
+.cur-burst i{position:absolute;top:0;left:0;width:2px;height:8px;margin:-4px 0 0 -1px;background:var(--red);
+  border-radius:1px;transform-origin:50% 50%;animation:burstline .5s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes burstline{
+  0%{transform:rotate(var(--a)) translateY(-4px) scaleY(.6);opacity:1}
+  100%{transform:rotate(var(--a)) translateY(-22px) scaleY(.15);opacity:0}
+}
+</style>
+
+<nav class="nav" id="nav">
+  <a class="logo" href="#"><i></i>OND 온드크리에이티브</a>
+  <span class="spacer"></span>
+  <a class="item" href="#about">ABOUT</a>
+  <a class="item" href="#service">프로세스</a>
+  <a class="item" href="#work2">포트폴리오</a>
+  <a class="item" href="#contact">문의하기</a>
+  <span class="spacer"></span>
+  <a class="tel" href="tel:0269533181">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    02-6953-3181
+  </a>
+  <a class="btn-cta" href="#contact"><span class="dot"></span>영상 제작 문의</a>
+</nav>
+
+<header class="hero" id="about">
+  <div class="wrap">
+    <h1>
+      <div>차별화된 OND의</div>
+      <div class="l2">
+        <button class="arw" id="prev" aria-label="이전">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="slot"><ul id="slotList"></ul></div>
+        <button class="arw" id="next" aria-label="다음">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+      <div>이제 믿고 맡기세요</div>
+    </h1>
+
+    <div class="dots" id="dots"></div>
+  </div>
+
+  <div class="rail">
+    <div class="track" id="track"></div>
+  </div>
+</header>
+
+<section class="pain">
+  <div class="wrap">
+    <div class="pain-head reveal">
+      <h2>유튜브 제작, 혹시 이런 고민 있으셨나요?</h2>
+      <p>영상 기획부터 편집까지, <b>OND 크리에이티브</b>는 유튜브 제작의 모든 어려움을 올인원으로 해결합니다</p>
+    </div>
+
+    <div class="cards reveal">
+      <article class="pcard">
+        <div class="pcard-top">
+          <h3>조회수</h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 20h18"/><rect x="4" y="12" width="3.4" height="6" rx="1"/><rect x="10.3" y="9" width="3.4" height="9" rx="1"/><rect x="16.6" y="14" width="3.4" height="4" rx="1"/><path d="M5 8l4.5-3.4L13.5 7 20 3"/><path d="M20 3v3.4M20 3h-3.4"/>
+          </svg>
+        </div>
+        <p>유튜브 채널을 꾸준히 운영해봐도,<br><em>조회수와 구독자가 늘지 않아</em> 고민이에요</p>
+      </article>
+
+      <article class="pcard">
+        <div class="pcard-top">
+          <h3>신뢰</h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l7.5 2.8v6c0 4.6-3.1 8-7.5 9.2C7.6 19.8 4.5 16.4 4.5 11.8v-6z"/><path d="M9 12.2l2.2 2.2L15.4 10"/>
+          </svg>
+        </div>
+        <p>여러 유튜브 제작사를 비교해봐도,<br><em>어디가 진짜 잘하는 곳인지</em> 모르겠어요</p>
+      </article>
+
+      <article class="pcard">
+        <div class="pcard-top">
+          <h3>프로세스</h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="5.5" cy="6" r="2.4"/><circle cx="18.5" cy="6" r="2.4"/><circle cx="5.5" cy="18" r="2.4"/><circle cx="18.5" cy="18" r="2.4"/>
+            <path d="M7.9 6h8.2M5.5 8.4v7.2M18.5 8.4v7.2M7.9 18h8.2"/><path d="M9.4 9.6l5.2 4.8M14.6 9.6l-5.2 4.8"/>
+          </svg>
+        </div>
+        <p>기획·촬영·편집 실행사가 전부 달라서<br><em>진행 과정이 복잡해지고</em> 더뎌져요</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sol">
+  <div class="wrap">
+    <h2 class="reveal">이제 <b>OND</b>와 함께하세요</h2>
+
+    <div class="bento reveal">
+      <article class="b b-red">
+        <div>
+          <h3>자체 채널<br>40여개 운영</h3>
+
+          <div class="ch-grid">
+            <div class="ch"><img src="image/boda-logo.png" alt="보다 BODA" loading="lazy"></div>
+            <div class="ch"><img src="image/jisikinside-logo.png" alt="지식인사이드" loading="lazy"></div>
+            <div class="ch"><img src="image/moneyinside-logo.png" alt="머니인사이드" loading="lazy"></div>
+            <div class="ch"><img src="image/awesomekorea-logo.png" alt="어썸코리아" loading="lazy"></div>
+            <div class="ch"><img src="image/book&amp;life-logo.png" alt="책과삶" loading="lazy"></div>
+            <div class="ch"><img src="image/jisikhansang-logo.png" alt="지식한상" loading="lazy"></div>
+            <div class="ch"><img src="image/gunganggujodae-logo.png" alt="건강구조대" loading="lazy"></div>
+            <div class="ch"><img src="image/goeun-logo.png" alt="고은언니 한고은" loading="lazy"></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="bcol">
+        <article class="b b-dark">
+          <div>
+            <h3>기획부터 운영까지, 올인원으로 해결</h3>
+            <p>검증된 전문가들이 원팀으로 움직여, 빠르고 완성도 높은 결과를 만듭니다.</p>
+          </div>
+          <div class="flow">
+            <span>영상 기획</span><span>출연진 섭외</span><span>촬영</span><span>편집</span><span>채널 운영</span>
+          </div>
+        </article>
+
+        <article class="b b-media">
+          <img src="image/kangjiyoung-thumbnail.png" alt="사회생활 15년 생존법">
+          <div class="cap">
+            <h3>유수의 기업과 셀럽의<br><em>이유있는 선택</em></h3>
+          </div>
+        </article>
+      </div>
+
+      <article class="b b-orbit">
+        <div class="orbit" id="orbit">
+          <div class="orbit-stage" id="stage">
+            <svg class="orbit-svg" viewBox="0 0 680 500" aria-hidden="true">
+              <ellipse class="ring" cx="340" cy="260" rx="230" ry="150"/>
+              <g id="links"></g>
+              <g id="pins"></g>
+            </svg>
+            <div class="globe"><b>OND</b><span>올인원 콘텐츠 파트너</span></div>
+            <div id="nodes"></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="pv">
+  <h2 class="pv-head reveal">
+    말보다 확실한 숫자,<br><u>결과로 증명하는 성장 데이터</u>
+    <small>수많은 구독자와 조회수로 증명된 실전 성장<br>독보적 실적을 경험해보세요.</small>
+  </h2>
+
+  <div class="band">
+    <div class="band-in reveal">
+      <div><strong data-to="5000000">0</strong><p>최다조회수</p></div>
+      <div><strong data-to="3850">0</strong><p>평균 조회수 성장</p></div>
+      <div><strong data-to="200000">0</strong><p>고객사 구독자 증가</p></div>
+    </div>
+  </div>
+
+  <div class="voice">
+    <div class="vtrack" id="vtrack"></div>
+  </div>
+</section>
+
+<section class="proc" id="service">
+  <div class="wrap">
+    <h2 class="reveal">체계적인 <b>제작 프로세스</b>로 결과를 만듭니다.</h2>
+    <p class="lead reveal">레퍼런스 조사부터 납품 이후 A/S까지, 다섯 단계를 OND 크리에이티브가 직접 관리합니다.</p>
+
+    <div class="steps reveal" id="steps"></div>
+    <div class="panel" id="panel"></div>
+  </div>
+</section>
+
+<section class="port" id="work2">
+  <div class="wrap">
+    <h2 class="reveal">산업군별 <b>제작 사례</b></h2>
+    <p class="lead reveal">업종마다 통하는 포맷이 다릅니다. OND 크리에이티브가 실제로 만들어온 결과물을 확인해보세요.</p>
+
+    <div class="tabs"><div class="tabs-scroll" id="tabs"></div></div>
+    <div class="pgrid" id="pgrid"></div>
+  </div>
+</section>
+
+<section class="feat">
+  <div class="wrap">
+    <div class="frow reveal">
+      <div class="ftext">
+        <h3>유튜브 제작대행,<br><b>유튜브 성공 공식</b>을 알고 있는<br>파트너와 함께하세요</h3>
+        <p>수많은 경험으로 축적된 유튜브 성공 공식을 정확하게 반영합니다.
+        기획·촬영·편집·채널 운영까지 단 하나의 전담 팀으로 일괄 진행하여,
+        소통의 번거로움은 최소화한 원스톱 프로세스를 경험해보세요.</p>
+        <div class="ftags"><span>기획</span><span>촬영</span><span>편집</span><span>채널 운영</span></div>
+      </div>
+      <div class="fmedia" id="fmedia1">
+        <!-- 대표 이미지 1장 넣는 자리: <img src="" alt=""> 로 교체 -->
+        <div class="ph">대표 이미지 1장<br><code>image 또는 video 소스</code></div>
+      </div>
+    </div>
+
+    <div class="frow rev reveal">
+      <div class="ftext">
+        <h3><b>셀럽, 개인 유튜브</b> 채널<br>제작대행도 OND가 함께합니다</h3>
+        <p>배우, 시사교양인, 크리에이터까지 기업이 아닌 개인 채널도 함께 만들고 있습니다.
+        출연자의 색깔을 살리는 포맷 설계부터 촬영 일정 조율, 편집 톤 관리, 업로드 이후 채널 운영까지
+        개인이 혼자 감당하기 어려운 과정을 전담 팀이 대신 맡습니다.</p>
+        <div class="ftags"><span>고은언니 한고은</span><span>강지영의 동그라미</span><span>정영진의 나쁜질문</span></div>
+      </div>
+      <div class="fslide" id="fslide2">
+        <div class="fslide-track" id="fslideTrack2"></div>
+        <div class="fslide-dots" id="fslideDots2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="extra">
+  <div class="ex-left reveal">
+    <h2>유튜브, 어디서부터<br>시작해야 할지 막막하신가요?</h2>
+    <p class="lead">제작대행 이외의 고민이 있으신가요? 상황에 맞는 서비스도 제공하니, 아래에서 찾아보세요.</p>
+
+    <div class="ex-boxes">
+      <article class="ex-b tall">
+        <div>
+          <h4>솔루션</h4>
+          <p>채널 진단부터 개선 과제 도출까지, 무엇부터 손대야 할지 정리해드립니다.</p>
+        </div>
+      </article>
+      <article class="ex-b dark">
+        <div>
+          <h4>강의</h4>
+          <p>실무진이 직접 전하는 유튜브 운영 노하우.</p>
+        </div>
+      </article>
+      <article class="ex-b dark">
+        <div>
+          <h4>유튜브 운영 컨설팅</h4>
+          <p>이미 운영 중인 채널의 성장 정체를 함께 풉니다.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="clients">
+  <div class="wrap">
+    <h2 class="reveal">이미 다양한 기업과 셀럽이 <b>OND 크리에이티브</b>를 선택했습니다.</h2>
+  </div>
+  <div class="logos"><div class="ltrack" id="ltrack"></div></div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="ct-head reveal">
+      <p class="kicker">CONTACT US</p>
+      <h2>지금, OND와 함께<br>새로운 가능성을 시작해보세요.</h2>
+      <div class="ct-tools">
+        <button class="mailbtn" id="mailbtn" data-mail="awesomead@awesomeent.kr">
+          awesomead@awesomeent.kr <small>메일 주소 복사</small>
+        </button>
+        <a class="docbtn" href="#" download>↓ 회사소개서 다운로드</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="form reveal">
+      <div class="fgroup">
+        <div class="field"><label>담당자 성함<i>*</i></label><input placeholder="홍길동"></div>
+        <div class="field"><label>회사명<i>*</i></label><input placeholder="회사명을 입력해주세요"></div>
+      </div>
+      <div class="fgroup">
+        <div class="field"><label>연락처<i>*</i></label><input placeholder="010-0000-0000"></div>
+        <div class="field"><label>메일 주소<i>*</i></label><input placeholder="name@company.com"></div>
+      </div>
+      <div class="fgroup">
+        <div class="field full"><label>프로젝트 명</label><input placeholder="예) 브랜드 유튜브 채널 개설"></div>
+      </div>
+      <div class="fgroup">
+        <div class="field full"><label>프로젝트 내용</label><textarea placeholder="원하시는 콘텐츠 형태, 목표, 일정 등을 자유롭게 적어주세요."></textarea></div>
+      </div>
+      <div class="fgroup">
+        <div class="field full"><label>참고영상 링크</label><input placeholder="https://"></div>
+      </div>
+      <div class="fgroup">
+        <div class="field full">
+          <label>예산</label>
+          <select>
+            <option value="">선택</option>
+            <option>1,000만원 미만</option>
+            <option>1,000만원 ~ 3,000만원</option>
+            <option>3,000만원 ~ 5,000만원</option>
+            <option>5,000만원 ~ 1억원</option>
+            <option>1억원 이상</option>
+            <option>미정 / 상담 후 결정</option>
+          </select>
+          <span class="hint">대략적인 예산을 알려주시면 보다 상세한 안내가 가능합니다.</span>
+        </div>
+      </div>
+
+      <label class="agree">
+        <input type="checkbox" id="agree">
+        <span><a href="#">개인정보 수집·이용</a>에 동의합니다. (필수)</span>
+      </label>
+      <button class="submit" id="submit" disabled>문의하기</button>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="desc">유튜브 콘텐츠, 광고대행, 제작대행, MCN 파트너십까지 — 디지털 콘텐츠를 기획하고 제작하는 콘텐츠 미디어 기업.</p>
+    <p class="co">OND 크리에이티브 · 대표 김재석, 정재훈</p>
+    <p class="info">
+      서울시 성동구 성수동2가 315-61, SK V1타워 1006호<br>
+      제휴 문의 <a href="tel:0269533181">02-6953-3181</a> · <a href="mailto:awesomead@awesomeent.kr">awesomead@awesomeent.kr</a>
+    </p>
+    <a class="site" href="https://awesomeent.kr/" target="_blank" rel="noopener">awesomeent.kr ↗</a>
+  </div>
+</footer>
+
+<a class="fab-side" id="fabSide" href="#contact">문의하기</a>
+
+<div class="fab-bar" id="fabBar">
+  <p>당신의 든든한 유튜브 파트너, OND가 함께합니다 <b>→</b> <a class="fab-bar-cta" id="fabBarCta" href="#contact">문의하기</a></p>
+</div>
+
+<div id="cursor" aria-hidden="true">
+  <span class="cur-hand" style="--hp:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADICAYAAABS39xVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAADeCSURBVHhe7X0HvFXFtfc61EuJUTEI1lgwCirFRMVnw0T9TCzgs0TsiS3GlqeCqHyxRo3E2MVeYt5nSbAratSABkGsecGusSY2sKCCwJn3/da0vWbN2vuca733sv66uGdPn9l7/feasmcAFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKNoOegHACgCwlpfvAsCSPJBCoVB83VgCADYDgKMA4FoAmAkArwDAbACYBwDzAWAuAPwbAJ4AgOsB4BgA2IAnpFAoFF8FlgaAnQDgDwDwOgD87+eRGsB0ADhUrS+FQvFVYCMAuBgA3uTkAwD1VgqNixbZPjwzhUKhaC2W91bQDEYyhpNQzQvUMnISxYZNyetGAFiWF0ChUCgaYWMAuBIA5jCiWsSJpxWCJBdE8sP0XwSA9XhhFAqFgqM7APwUAB6o6u5FSyonH3vdt29fs/baa5vhw4eb4cM3MkOHDjHL9e9PycpKjRGXTbcG/1urwfsAMIwXTqFQKBCrA8B4AHi6iqgEi8jK8ssvb0aPHm0mXnyxmT5jhnnnnXfMwoULTcCiRYvMe++9Zx566CFz0sknmcGDB3Py4mlj3q8CQD9eUIVC4YDWxXIAsLafcv8P3y36AQCs4qfvOxq2BID/BoCPq8amJJJaYoklzK677mpuueUW8/7770dyagZIYNde+0ez6qqrSqQVfmNZJvECKxSLK74DANsDwBkAcDcAvAQAHxJlofIJALwBAJMBYAwArMETa0f4NgAcCACPVFlTZEA8IauhQ4aa3555pvnnK//kPGRRr9dLhePdd981u+22W+geJoToBcu1B6+AQrG4YF1POEg8bwvE1KzggkhcJImruNsLBgLAqb6rRevCiYlbOvWWlpb6zrvsbO6+++6MeOqL6shSBTEtkomKu9l4HocddlggrcTiqrnyPQsAXXllFIqOCpyWPxLcIkWc4aLKSrsiidSgJlkZQUJ87EodzTNsQ+gEAD8GgJv9ivNGJEXFdtnGjx9vnnnmGUJRjnyM5SlPSJyMmhKfjsf2223HrSts/2BlYR0Uig6N4QBwOYCdccJV1VFZa02uE2oglPyu5pl/w8C1TEcAwFOSNVVBxFa22GILc+2115q5c+cmREVJqqF4Swvj4JhV5k8E8cor/zRLLvltZ2nVkhcJlhuXVygUHRJbAcCtkqI2kFJriwonO7QCPBniWNg3DVwKcCEAvEMIOqu/RFh9+vSpH3TQQfUZM2YkfT5OLg0lIyd+zcO7v4hxx46zhNW5U0ZYzwNAN15ZhaI94ycA8GAVUZUM7Frp1auXWX311c2mm25qdthhB7PTTjuZrbfeuj5o0KB6r169aLxM2Ul+/4cX6mtADwDY2U8cUKuPl5FKrPc666xjzjjjDPPmG29SnvJdts9BWJaEKEn532xsCy2vQhxhPfPMs6ale/cwAE/bdmE7Gy9UKErxQwC4nyhqQiplJLXkkkuarbbcypx88snmvvvuM6+88oqZN29eorQIXE/0yquvmquvvtpsuOEGkbTQ0hIU68mvcYAYx+aO9SvDq0iaD2abbt26mVGjRpnbb7/dLFhQrJeyXT4kltidCwTEyKeRZFZWiRDrKmDIkCH8pYALSbFeuARDoWi3WKVWs2MbZcpKLSL7u2fPnmbbbbc111xzjXnjjTcSRaHgA8KF+yJz+umn27R419DngWX4ES/ol4z1AeAiv31LJGlGnhlBo6y44opmzJgxZtasWaxenji8xUNJxY4/CTN/rZJAYCXpuEK4P7vssot7IZC6+O4trsBXKNodegPAyQDwAbg3LyeqTGkHDhxouz0vvvhioqgBwaoQB4epxeFx1llncSsgCJblHF7gLwHf8rsZ3EeIMal3mSWJstFGG5lLLrnEzJkzJ603qWPoA2b1b1IWcTdKTrZd87ZNCHKha99DDj3E1qdzpxpv1714oygUbR04vf2MpLCCmBEjRpjrrrvOfPpp2tWLCoUkVV9UdIW40gXx/1FssukmCVl4wsAy/YUX+gtgAACcBAD/rLAkbV25LLXUUmbfffc1Dzzw16TccVxKqi/rDloCy4hHiNfIr0JC24fmPeQQR1isblhnHKdTKNoFlgGAC7Br4Mcz+EOdyHbbbWfuv//+RFG59RTe7NQ9/g5Kiv+FOIHovCXwh2uusXl1SseysGw4jvVFgeM1uDAVV9gHkuJdJa7UVtZeZ20z4cwzzeuvv57UnxPF55IqUqryKxNhDGvHHXfkdQv135w3kkLRFjGSWhjEmuFifvSjH5l777k3UQBEpiitEGS2eE0U7O//83fTrVtXmzcjrFkAUOOVaAL4HeOvAODRqiUJLD9b75aWFlR0c9NNN5n58z9L613V3RWlFeGIRRakmXyc9VZ0B4N19dn8+fU11ljD1bEYI8Q2wEWvq/IGUyjaEnAb3okVihvGkcx6w4aZSZMmRUVFLBKUKSgUdgPjtf8tK5pMdohnn30WiYKXCcuJG921BriL56Vs36myMbJEBgwYYE444QRbFgqp3lHEejL3qvgVIrchSpl7QaiIxx9/vN65c2faxQ5t+hwAdOENp1C0FeBuCbhYMKxQtw8ve5BNnz59zJlnnmkWfMasiiqhFkcziknDEFK4++67I3Ew5cLPYBoBB9H3ZMsxqqzHRHAlOs50zp37MSmRM1zc35x0orv1w7pXkEhSfxquon15W/J7wfNL2tWV78QTT+TtGdr0j7wBFYq2AvzuL3z3limrF7PXnnvZtVNRWS0RFUoizXjlFgC/TkUajA8YN+6YWJ5aLX53iGU+jVeIYCgA/C50ce2YHCNkWkcqyy67rDn44IPNzEceiWVAWEtSKHvWXWtEIBWC+DzxqoTNYZgPPvgAl11k99m36d68IRWKbxp4csqfqLUhPLz1Nddc09x8883xQQ8KkE2ro5Qpc1UcLybMXDlNL9yNMR9++KFZZZVVkm4bfv/mJwT4Oiw8ow/XEOEOEYHULEnxOvrrhKg22GADc9FFF9lN8Sik8trfDeosiUTupdIsYdmud+pGF6Jywjp23LGhzrRNsJ1wvRlOuigUbQZoefzDP6D8oY1KfPjhh5sPP/gwPuSZFcFFGGzm100LUa6jx4yx5elUS9cK1Vw3NgCXJPxfv89W7PZldcsXoNa/9a1vmT333NM88MADJFeHoh55Gfm4XRjUliQhqSbbxC1zELqT/JoLLystozHmwQcfMl27dk0Ii1isZ5E2VSi+ceBYDh60mSuzF9zm5I477iiUNigmU4TwRuekZAfaBaVqlWXhGQs/4+ncubNVLvvZSzqbhbtDjAKAOwDgU0JSEglnMmTIkDqOyb388suxrra+mD+tq//duvJLkrdJaySUjU5iJCKVuaiV/fff//532c6j2G7Yhrjbq0LRJnAcmcLnp7HYB3j0bqPNO2/77lCFxWAVx779BWWRrquEWQABM2c+avp+p2/SZWNlDsQbxqZ4nZK64e+w1fCdd95py0+RlSuWr4QgWiOCpVRKPK2QuODULweJ9ywSVvhrzOzZs82GG2wotSf+xfY7jj8wCsU3gc41Z43I3SSAes+evczEiRMbKm+j2b5GVkhMW0wjZm8tqz59lolKxQfIw2ZzdBBdILSomDgWhx9ei9ZUUv7cLYpAOoWUudP4JB3mZ61V5s7H85I0uEQrkLZvUc8XXnjBDB06VCIrFGzHv37O9WwKxZcK3FP8zoqukhm41kAzY0YxGyYqRcnSBKnrxyUhhizt4Fco13nnnWe6d+suKVZGRFXSs2cPs/POO5tbbrnVfPrpp0UGGWkGQ4WXjZBIrCepL69LJA0hnWaExHcS7kXexo6YSsocwnjcc8899qQd1j6RrPz21SvzB0eh+LqxEjn8gCu9FfxaH7sKToudEsQBZq6QoluuTJKUKTHFM888bUaO3KFQKpwJzK0rO0PIyYnKoLUHmV//+tfmuWefS9Lneed1KcQteM3dG8YX3JK80V8Kk6QRSLI8DLcEEz8P3MF03Di3SZ8ggazwcyRcTKtQfKPAQxDC3k0ZUeFDe/JJJ8vK7JVKJBmvRKWWlaCM1D2MqSApBsyZM6c+fvz4eu/evROl8ntL8XKLhIUfH++z9z7WmliwcIFcr0ZlJJKQlVRX/yF35s4ktKH920S+URixcYKiEupJgUtRBg0alLVTbE+3JAT3yMcdYxWKbxR4Ws2/y8jqW717m+uvuz4+3LKCpEpBCaqUrLgiOX5Krwk++OBDM2HCBLPyyivzMmZKxiwt696pUyez+eabmwsuuMC88Xq+31ZWHlzoWmLhUJFmOZshp0R8PjydNIzzK7p+kr8nI+5HhGLatGlm5MiRvP3C79B2+Fy8DgAb8gdHofi6sR4A/CuQFdv4ziy33HLm4WkPxwccLZ2yro8bs2o8dhPiIwp3gTA8Pv74Y3Pueeea1VZbjSoW3VU0UTgaBv+utvpq5qijjjKPPfZYTDNAIptKycLy688htn08WbOXQGJxlYiF4O78ZItq2sMP222mhTaj3eow6YKfKOmYleIbx/cB4D1qWdmH1Xeh8FDOMK5jdUa0NgSFp0onWC5VfhQfffSR+f3ZZ5sBAwaUkZK3pGrZNsO4B7zdIWHSJEt4FEVexFqJ0hwBJR9ol8WJFhEjHNqGQhtQ4USUkJhPh3f/aByOu++5x+w4akdTq9U4ScU29df4TOCyj/H+ODKF4hvFYDy9hXUD4wM8YvMR8YhzfPClldt02h4VOFFc+ztXZKpcIXxwC/jkk0/sDpxrrDGAK5E9YoqMSWXlxk9lsNv40osvETX16VPFFsm38EutxVxi2RnhNIpHhZNRFFzvxd2EuDYMJa1Yn6TqZsHChXa3jB/+8IcJSZW0YbCq/qaD64q2Aty76LXEsqrZze7sQ/vjbX5s5n7kzrxLFSlXHKpA3I1bWg55mADcK2rixIvN9773vUqlQuugE/FfaqklzX777WemTp1K8nGgxBQJy5KKUN6qunjh1lS45u6tFZdnPjbl0iXWnP+dWVWuZROyevvtt+tnn322WWeddcvak0ogqjcA4ABdY6VoK8DTXF7wOxHwh7a+++67mwUL3KyZHa+qUEQ6liUpuUROQbko8GSYSy+91B5pxRTLW1XJKc/Rb9iwYeacc84Rd+8MA/iBCGL5uAXExrCq6kvrkLo1iFMiNC+p/TJh5BuEt+isf8wyRxzxK9O3b1/eZsVkhB+rJF8y4NDACfohs6ItAReFPooPKD60+HEw/UB499G7x4fe6VBQFve7oTITKdIplI12owJuuOEG8/3vf5+++bPxKEaqBvebuvHGG+0RXxTierD4CUpeRhe2+S4cCtahoVXVDBGFtuDuJRK7zYGkrDut+yLcA8z89Ke7mh4tLVmb0Xb0XWu3fU7N7rYwAQBW4A+LQvFNAgdOJ7NPU+ye5/h3j933iFseFJaQUwquPGVSOn5DLKvwd+qUqfa0GGpJUQXDcarQRUXp0qVLffTo0eahhx4qtJTsBR8Qy0HyDRL8E5KQytukiJZZQtKtT5uWLYxL0e4fB1qXZ531ezOEfUaD3WbpqDNiUb0MAGP91s8KRZvDRWXdwFEjR9WDMuBf952af5sHUpC6QjacoLQ+vtR9QUyfPt10K/+UJlE8XAO2//774/a8RE0dsjyFvKmEOEU4Wl5CtomF1jxhi2LTLNLlFlVKntyvsKYSc8oYS9zYLn36LM3vJ7FQnfXM9qBHC3t/v6uqQtEmcZjvBtq3LnYDw7lyI0ZsYWflChTKw8mAK1vTElL2Srf//vsRSyA79NS640r0I444wn6EG0tGPwOyafnflGwaSTPhhDC27r4Q3I9LMTDO0uSzf/G8wfCiEPIlmP3ee+biiy82w4dHyzQQUrZ+LhCUJys8Sv4mANhWB9MVbR14VDw+xMmMIP5df/0N7Na3iEYD7F9EYpfGzwju5wmLjVXZMvXr198cd9xx5rXXXkuU1Y9GZWkHKbqBniwomdGwnISDBcXDlVlvJekk7txS8mSbh83jc0sK8bdp08wvDv6F6d+/v2SR8m8nqTWFq9NxfAqXsCgUbR79cRW7HWBNd9+sr7TSyuQ4eKcsXEGL8aFcscqlRJE9cSFmzMAuYbek67fySiub0047LdlqGOM4IpXTkhTe+TE3RmainyRVfkxsniXhY8VDmVmXNZSX4t133zWXX365PWyWthMnK0pUpOs31Z9EjZMsCkW7AJr+94YZQfpw9+zZ0zw8bXpUDq5gKEhWyayb/+3ciWJKpMHd/DUF7l+FB6qiQk44c4KZ/Z7fAcJDil/qVkIU3D8jsmbik26ctAeVFJ93+xI/WzlXP8mamjlzpjnssMNMv379wv2qIitqTeExZLiHmX7vp2iXwP3K8UGmD7p98G+84UarHOJ3gWVdqTLh4Zj1kPn53xJo3GiUhPDWUJFJJ3Mryz8JU12/rF0EwTDcKkWJEwzBjbYJr7S1pt4zV1xxhdliixF8PC8Tv46KEtVMf8CrzvYp2i1G1Nx3YHHcKhDWiSecEBXFjbcQS6qVkhEFlSRNTzyMzDjQL8xQZumRONwtSiSPnETyMCTNLAyf8eTfS3KLqiCnhKgySev78MMP26PByNiUZEUFoST1FgBcDACb8RuvULQ34HQ1rrHhZFXHT24CgmJy5WtWJMvCiR90ziyt0A3KCccqOAnLZ8sKSyUlkSSdLL9yKS976yQhKtzuPfHz/gw4NnXpZZeajTfZhI9NJYRFuvGWpLxVhadWHwoA3+E3XaForzgnkBXZJqTer1+/OMhOlc6OSQnKaKWCAJpSeoFEMsLi6ZDFqgGlYRMCEyylsrAVkpVPEl8nDJzEdaWN6VDMmD7D/CK3psqsKjqA/lYN4CIA2ITfaIWivWNjT1BWCehg+02T3OGmqEy8C1hJPhWkVSah75PFl9LypCZ2pUK5SPl4WXkc6h9/S/k2IZS8Cisv90viELz99tvmsssuM5tuuqlETpJb7PbVnDX1C7WmFB0V+OmN/U6Qva3Nz3++X1Si1iovJwQrJQRXjOPQsMQ//Lbaniq8mE8TUhmPlNOGsw3A/H2YtDtHiSr8Jp8seTeXnPOjePTRR83BvzwYPz5uZEklJOVPUcaZvs35zVUoOhoO8Q99ohgrrrCiee+99wqyskoqKHeQaBkJikzTsGGo8he/rWXDSC2u6WL52TTDb0ZiokgWFE9TcGssct68TK7ABWEF4MEcV155lf0wW+jyccKy3/Th+jhvTU3z1lQ/flMVio6IpWru6KVs7OqP1/4xIYWmpYQMIqExcRov+31RKbPYEikrryCV6fFrUqdsYMougp1hDj30UGlsKt4D8mE37fLh5ok407cBv5kKRUfHyUJXsL755iOiYqHClVkkhbISf8kiIl065+a6WK0iK7+MIg70+zGs4B/KWioJoRSWThZOiCN/41f8tV1WWhb3f8wjAK2pyy+/wmy22WacpMpO7XFbuTir6mG/QZ6OTSkWS+CGfO9zwurcubN5hB52ypU9syRK3BpIICzubkXoGlIpHRRvNONnw5SkW5Zn0vWU4nk/Rn4U+HXAYYcfZlbIDxnNLCu2uBPvz9W6bkqhADiLklWYJdx7771TopKU2Poxd37dpLjMivGdRIKFY9P2QXmYEC4SR3DLrb74m+9+QPKK5SghokKCe6hAChz/u+aaa8wPt9jCtmuZSOumagDTAeBg/1JRKBZ74C6RH+Ehl/STjpaWFvNsPO2GK2ihxI2kdH1WtKz86nRCJNTiiqvWpfyidcUJUwjL49Br7taEZKTqe7YUeF7fgQceRL/pywjLH9waj8Xyvz+AGlwCAFvym6VQLO44xe3EkO6H9LN9f5ZqHyEucRyLEU7hLrhxicRTuAUi4+FsOtadrIYX0i+bUcyE50HIKJIp2TwvhnENwpvIvP76G+bCiy40G2+8cdLFc5ZrLbRxSljuuKxIaDV3IO36/EYpFIs7evj9jpKxq5bu3ev/+J//sQpoF4hypQ7XjLgCOUgkYZXehiff1PF0pTxomsSNH6Qa8+Rls+Uv6WYKQskqIS6WPwVe484R2IVeeum4e2dCVgVpFV1ulE52G+KEsFDwfuCGeTiwrlAoPEZJ66623377RCOdsoaPnINlE8hKsLYkoZYKcbN/xb2ynDWFs24ZEVYRneRPr2M9CreEzAJBx5XztgWkoSnz4osvmjPOOMOsN2xYQkqUsPz5h5lf1y5dxM0Ho/hZQX8KjUKhAIDr/eBu0h287dbbnZqiAntNjcpOiEDq+jnnwj0SnBRHkkAYITwjH58BcSPps5nBqrzoPl2haxf9SRk45s+fb2697TZ7RDueDJ12+ZJ2jF0+SlSrr766GTNmjHniiSfMgw89aHbeeeeMsFz33HYfwwzhOH7jFIrFDcvW3IZtSXdw4MBB9QWfuTMFC+IoJ6rE6mFk49yLuKUD8N7qSfNIiU+SlDDLLT2xW8tJSvBDsg147rnnzEknnWwGDRpEraLMMiIzfTHMMsssY/bYYw9z06SbsiPvEXi01rBhQ5M0Avn58UW8RyP4DVQoFifgqSe8O2hO+LXf6wr5IOv+CSIQQUMpIYoqiygNR60hVzY3RpaHzSSQl1SGYFWFbqAx5q233rJWUPfuxQk9aDXZsaeUuBLp3KmTXRR6/gUXmDfffDMhKDomFjBv3rz6gQcemJKdP1zDdw2fA4Be/CYqFIsL7uTWVZcuXcxTTz7ldIoochx8Zt2m0F0rZuSIMjKptK742FaZSJYSv7bCN8vz42Ri2DQdgvqiRfX6yJEjMzKKROUIJfFbY4017AEYTz75JE0rQcwvElbMt370mKOz/LzVhV13Hc9SLJboC7jWhxEWnp4cdCdTaEIG+Nd2lwKRZWE4GZAZO+8WZ/lImpJQMqTu+XXxF+NkhCUJJUBStoDXXnut3q1bV04emSy99NJmzz33NLfddqv59NNPY3xEPEnIWnVFOdG94Kn4QrD/kHEtK2HVe61mV7vrx82KxQ47Ct3B+vHHHR+VJyguV+bK7iEdzCZkw+MU417VaUkSu36JtZSv2aokUU8W7jovQyCSOXPm4KJPSxp4gjTvAg4fPtyce9659uRkijT9Is+QdkKO9NpbXLgyfpXvruLyTQfydQBesVgCd59MrCt8i0/565RC6ZiiJUpnTYHgJlsz9nAFSlrNCiOeVErSqoxTSCSRpEzFb1fvsPbMtcOll16akFT//v3MAQccaKZMKdrKNwgjqpxEaVu4vLwfIazgd+WVV0britwnvGd4YIQeZKpYbICb9P2dE9YKK6xo3n/fHYiaKFNQcG7BZGGaIw5r+VSQWNmMXvQX3EJ4To7FzgqOibJ4FeLq59riL3/5ix2XuuLyy+1+6hRuuVhRjsyyCumFv1LdY32LdHE2caWVVqJkFQjrMwBYjd9UhaKjYlkAmBfWXwVl2G677QslpEpEyYOTVIU4EyN3D37cLROr2IJycyFkmhBWGenZ8CXperLk7cARiEXKp3CnlicjzJL8Y/reutt///04YaHVhaS1Hb+pCkVHxIoAcKowfmVOOOFEojB4qIQjjIQEvDLaQe1AJn4Fe9DiqHycmMgHzjRcorA2CiMU8jvE55ZUJKwQXlw5T9OTCSMh6fA7DGjZyvufNKwgfEV/Y4J2acdrT5JXXXllJKuwmNTfuyP5jVUoOgpWAYDDAOAvYc8r4aBNc8stt3q6KiyEXLGqJSpmiGuVmpJPqujJBnw8PbZqvUg3TY8quthdFAiDX2dCylmQlMsntk+VxJnBYia1IUkm8Vw+U6ZMcWSVLkhFwvotv8kKRXsGWlL44eydNYCP/UMeJHlru7818/e/u4+dJfJAi8FKAxKLFpCgnFKXqHATSEAoh+Qfx6fKyiakY6cMon8er5LQGOlGNx6OtQHvrnLrk6eBeOSRR/iLJRDWGfyGKxTtDbhd7h4AcDMAfOjHqMIHtPyhp4Rlll9+eTNn9vuV1kMjssokhpdJMEjsakmkVSUkTU58WVkr8rfhBYLNREgjy4fUx14b331OLE5BAmGx8bJ77703u2eesI7hN1+haA/ARYR7A8AkKA6QyCyphKT4da1mrrrqKqchrSUNqnCZW7CiwnR/SbgyIWFR4UPZOElUWkMsPc9oRdxI0BWEklk/Rf6lREfDS2nytFF83zP4Ic4//3x+/8Kg++78QVAo2iqWAIBdAeAGAHjPPsD+A1lORlWy3nrr1cePP77+yIwZgatSJSKKZRU9rrvK/VEKK8ITlWWYQDIhLgmTEE/aXQrpZ2RE8o0EKJQ1iRPjEgJlfoEoOBlinEZryRICFPxdOqycsT1oXd07w5XF/R05ciS/b+FlNIw/FApFWwJutPcTPNKpVoPX2OEEyWr1+KV/TlJmyJDB9bFjj6lPmzatjihUBD8LFBStGRHIyyld7i5JHIOys4O5f2ukWSsuCSeRkeAmkhEhm8yvkbBxLEzDWZKu/V577fV67969+T3E+/0yAHTnD4hC0VawJlno6cRvZyzM9mUybNiw+rHHHlv/29+mOcWgJGUVLlhEDpliMaXiboVFJfjFMCQNFo4TgUQ63MLh5QhdMzpexNONUkVoWLaSvH3BSTrcSnQSy+atp9JyhPC+PWg8xNixY+39oy8eb0VP5A+IQtFW0AUAHpIsqSrSWmfddepjxo6tT58+3ffNCiSc5btrhVKWKyJX5KaEdn0EonFuDeKV5CulxYnNhiMEGS05Ib0sH9su3I3H9T1fnhaVkH+oS2gLWzDqV+y99dhjj5mWlpZAUuG+hs+DdK93RZvFAP+w2kH0ku6efZAHr7uuOf74483MmTPNwoULvTpEKbZXoQpDlSYoZPZtoPSxcSrlpEPTTsMXcXxeZKmBtZQYsYh5NBCJwLjEdFn5knCeUHjcLyq07W130Bgzd+5cM3jIEKmbj8/AbfwBUSjaEvAIrk9CNzC8cTvVavVuXbvWB641sP5f/3WkmTJ1qlm4wJJUAhynskobSMr+nysLV1B+zZU58yfCx8Io8YQ8aRqlaZVZejTdKpIJadi/gRCLOhdtQsOn8X0bNic0bkW5Q5q0++qdzUdzPzJbbrml26UhtZyRrPBQiiH8AVEo2homSzOA444ZZ8mIwilKubIkwqymoDVZGEI0hTvLI6TDrTAfLiUtlicNz4Wnl7gXdQ3ltmnxsjHxfTTiRg5SZW2SSUJKghsTXjd/l5J4AS+99BI/Gsztg+W2tUHCOpE/GApFW8S2YQzLb5drCWvLLbeKD7tTgAazbA0UOQtHV4NzvzLJ8g8WDu9mtlLo6cyBVOjaLpo2L0MMz/PPSbewABlBB7cs7Yq2EtIo4vk0PSZNmmT69u2bkFUkLdzPvQYPAkBn/mAoFG0R3QDgeb9qPRJWp1qn+sxHZjrC4orUWqlSeCaFVcQJQLDQYpoFceV+Jb+TML6OxN9nJpBRTkSiu/fjVlAzEuK47raQLgorL3V3o4oOeHoObk3NLKvwG19UT/kdYhWKdoNfh4H3MAiLfw8//IhIEgGZgjQjXumiIhK/ZKaMK2C4TkjBpcXHsor0CgWPhCOEo2FDuRxZFlaQZAlxaZRHIhKBlcStautsdlGQQFqnnXZaZlUR0sJ7fit/GBSKtg5ci7UAH2A/rmEJq3//5epx0z2uvGwLmKCMmUJmUpBOJkwRI5G4zH0Yaq2xbiqxOlwXi4bN85MG6aW0ivB5Gi6PkvrQtMrSEfKxYSxhBUIt2j6rVxIn+BdpXH755ZGg/HgVJa0wO3g/APTmD4VC0ZaBD202+H7jDTd62yonLK4wVX6ispf4UYuncEvz53GaE5YGrxNPV7KIWiOMiNKZu0LK8pDCckniss+bsM1mz55tBg8enFlYXnC9nRvHArhdx7EU7Qn7+uPLE8IaNWpUc4RVNd5CwidKSLpkVvG4pUGuI2FV5CERXRa/yS6VmE5p3kU9osUUSSOtR9ENZeTJrl1+PJ/gXlaOPC4Ct10+9thjzQorrJATlpPQPTyTPxQKRVvFErUa/ItvF9OjpcU899zz9sEPq9bjzptcSbzw8SWq+KLVUKaYNH4IQ2f0WPzMvcSttOwNylHkI5BLlZTkl5GwmL8Lw9stGauzb5OiTPi7eMsUP/G0nLFjxxqAGh3HCuOWYaugjfiDoVC0VZzv37SL0NLyiwvNSSed4p59RgBlv1svjAAExeUKyf0/j8Qyh+1liFUSwjhyFuJiGEoa0Q+T4u0hE5YVRratasdGRBiIjdQL8ac//dl069YtIy1/7+/gD4VC0VaxkX/LhgFZS1jf+96aZt6n8xJFbkZxypSotVKabwPJtkhuTTkFknL+5Dqmy9zjWJKQH8YR0qaElbVVhVVJw/BZT5pXfOF4hOPF/MnSlLBwxfsa/MFQKNoi8Dy6R+gShyCT75rsH3r/4HOl8kpTXAvKmoX5IkK6UQIh2YJaK4jHy7usMR3pd0hPIKGyQfQQ33WhffwwiVcRnpMStQDzOMSN+yftQO5TpCuHLbfaKrnHoWsIAL/iD4ZC0VZxcFhEGr4vRBk9evfkYXeKwZSoGeHKFd0Ft6C0mVVSkkYmEqnyMCR9VrbGpFySXpXw+F5iPe11SoSlRJZc+5eJTYMRFi0jsbQm/flPKVm5+42EhTvMKhTtAssBwFz/yUZ8mJdccqn6m2/+y5FVVHCiCBWKyBVMlJL40S8hBoFIGkmIz6yPQEqRhEuk6F5WlLMZ/zLxREPbKpQpaz9fl9i25NqFKbH8aJrGmDfeeKPep08fe39xvJKsy3pCT39WtCfgQRO2W0g/1znrd2fZBz0O5ArWhahcgvWSheFuVjyJlPo7KVsqIEppWgV5JYRIjtSKbg3IrTVSRizRX3DDMgWrqvSFQOoptYtH/Qc/+EHoCoaXE9735/wnWwpFu8B/0g+ig5W13rD13F5YQbnd6zq1TqQB4kSR3A4Q9Do7Pj4oMSU6qtgVSh4JQAgjlSsbqI7SHFk6yfMKcbN0hXLR8M2GlUiIS7S+krb1fh6bbrpp0i1UwlK0R+Ae76+Swfe42BC3QqZIlCRYXqjA/tOdwgLgysf3myrSir+ZAif5EWLKSEEkIBI/lvOLS3U+eJ2WrzgwI48XSZIKIS2RpMR0iB8hLA7czG+11VaTCEu7hIp2h5MkwjrkkEPd047KY5XBj5d4xSosnFR5iq5P+fiKJBIhVFkeWbhgQTFyFdO1QtIOM4OcmG3a6XWSHrUi6TeWhDhsmuGap03dWPs6P6E8QnxO/BxPPvmk6dq1q+sSFlti4z3HIQGFol1hVQD4LH4Q7Qmrf//+9lMPq3TRWvAWVTNEwsIUypoqFycEvM6O84pERNKsIIGGQqwRd91EfUhcSjKSv+jmSb80TFl6ND53p+J77eEa71HAhAm/s2uw3P2tOXGENZ4/DApFe4AdfA/bJoeFpJdcfIl94JMDJoiSJIpbpmzWvwmFI/7iADSR5giTppkTXRBTUa5oXUY3RrZepPJIbolU5JuQmxcsDA+HXXFnlbmyOlZ3ZcQ2RHz88cdm9QGrW+uKbJeMZIWin+co2iV28B9EJx/KDh++kVeO4s0duz2iFOEqhezKyd3xr7Omghu31AQLTSSHwpopJY8q0ohhKNnlxNfogNQysURJtu6patfEL7RR9Cvaw5UjGlYWRxxxRLSu7MuoWIOFG/rhaUoKRbtDLwB4k698r9U6mUdnPhoffq5IrRJKDtzK4WGpu7cguF8qOWGIlqAkFWlHUrBh8vpnu0EIZY0WDw9rwxfxXF3zMGK7R4KMN8bn4WZiAyZOnBi+IyzuqbvG+7wXfwgUivaE33HCQsHtSpxShDd5Tg6pMrHfkhImYRqkR4RaMm7QRlBmQaLS+3xDOplllKQvl70IW4QrurBpPlSKMDwP350uaavWCMXpp58RJlBoNz9YV//Q5QyK9o51cfcGupAU/66yyirm47kfF0rfUGQC8trsrjlRNCGZlSQpty9jRkRNyueNJ4oloNziopLViYsQN7kPxD/glVdeMbvttlskq8Jajqvb8XpzfvMVivaI+8hsYRzLusHvRkq7MCIxlSq87N5IYRMLxP7Owzgh6QuHp0rCycl1p5xbVi5ahox8Sbmk8vm4ZWXK8kriCm7BPVh4BNddd71ZZpllLFl19hMohLRCV1A/eFZ0GOwvdAvNtttu5zSirAtWSlSC4nElbBTXS6HYaRkqFZ4Kz7fM7fNKaVrByioh+SopTdP5xZlBY8zLL79sevXqFdfRBSvZv3jCrODl/IYrFO0ZeAzUHE5aPXr0MC+9+JLjLK44UYGat4IykqkiLWpNcL+ScJLQuNy6ao3EuGJern3CUgP87fLN28055u7WL465FXmVlRndETffcosbYHf7XiWzvTW399Xv+c1WKDoCLqWEFbqGp556anybByWyXZ2guEGhJFJjyl10p2Ql/MqlgtxiN1TwS+JzN0ZAZQRThCXlYJ8dlb0YnHvuh3j88cepdUUF7yUuDMYTkxSKDof1yVl20cpaa621zLx5FbuRUiEKXVgbFfEi6QlkEIiRx+FxvWTrtBqItCCztZJbfgVZScSVhW+yrE6k+jkmO+SQQzhZBUsL7+Uf+I1WKDoEau6j2Gws69577k2trDJplQIWEq0Owc+KoPxV4SWySNKpiPtFpBhg5+3kr6X2o2WVys2JOS6+jbfEYp999nFdw3T9Fd5L7Orryc+KDgn8xowTVv3nP98vKgZVoowYKohAHLfh8blY/wZhrLgwWR5NWlGZ5VOVJ6ljNgNILUbinnT78P+qdpJITSgjvReI+fPnmzXXXNNaVnSm19/Pn/AbrVB0BKwGAPP5miycMn/nnXecktiuWq5QmTRDNrHbWC502YGLk4dJRcgzxnGWSe5eSEZ6gr8chuZbQmTcPUs7d5PTyd0Rp/7mVNodpFbWofxGKxQdBbjfNz9w1Zx//vnZ219SsMzqEpVbEK+MMhmkYZoSS4a8LLLQMsv5y+kUVk6el5wOE14+ar1xvwoJuOvOu8oI6zh+kxWKjoIRnrDog28/iA6wStKMQrZGrOXWvJK6OI23vJFItXnic3UsHfi3Up1/JqG8VeVuYJHxLqYVY8ztt9+eDroXHzyrhaXosOgMAE+TsSyrAJ07dzaPP/6EZyyvyFVKR5WrAUFkpCKEz8KUhZfKxNNj12EEO1yHelm3irVQ1fIlE3oDQZx77rn2XnWqxYH3MIa1Hb/JCkVHwjFkHCu+tQ877PBgY2UKUyaRsAJJWOX3JzFn1kLYfoWkIXS3JAnkwt1dGumiTidCdyzJl/3lXUfWBpUWJ0+bhE27o0JcSVjZAnbaaafUwnL3cB4ArMJvsELRkbACHgVmu4Z2W133bRruRjpnzhxHDlyJGknYsZOST0JkQhwS3h1kURCdJJ4JYnohTppeHs+lH7pqjcMGdzdL6K0xgYBd2ObyT8rerIS+oDHm2WeeNT169JQI62/85ioUHQ41gJv8drrJ4Dt+aButGa589JqTWhaWWTyhG0bDePd8TymfNicDKX5Mp3qX0SBZ90+w8Cw5CfUPpJOUIRJnnpcoPlwcm/LueRv4vDz23ntvTlaBsI7i91ah6IjY1T/wVgHCmMg22/zYaYhXqEKBim17g1u8lo7DakqCdVU+uE7TLfudSUKU/LecT/QXiINKJLPwOwsT0pdPAyrSz3ersM2O16E76pczTJ061XTp0oUSVSCrTwBgJX5jFYqOiCUA4F/hWPtAWN27dzfPP/d8oTyNlDhYTtzi4mES4ihIIyh1VO6MYHhauXvRXXN/y8ivrAySODLOw1DCysWHl9qigpRjutTNdwdnz5ljBgwY4F4q/nRn/4LB+3Y2v6kKRUfGBWS2MMw6mVNOOcURECOHgsSCZeDJKlO+XCGjiEorKLjgVplu9CdES6ycRnGxXJE0SgmJhhfcWHqZG4mbWotpvgFIcNtvv31iWfmXC94z/CRnWX5DFYqOjA1ptzCQ1oABa5h5n7oPogOcYgnKVyFJeKvAVIllhfaMw+IFZUYSFeKVkEdCCskxXixtK3yWkabP8+TXPo/KOCiemBhJGcurJB2PPffYg49ZhZcK3rND+M1UKDo68HTgR8kSh6gUd95xp2eqVJm4ImKAOL5VsQiTk12q3MW11epgaXAFZ10tO4sndBFjHL48IxIVDyuRC0mnJByvA49XJbw9orsxZsGCBWYPmaxQ8F79md9IhWJxwS/8bKFTDrd62uyy8y6OrywhpNZH6ThOtMQIsZQRSpl7AymsJGGMqZn0eBhfv4x8eNpl8a0wUm9AgFIaAfhN59Zbby3NCAaywkW/3+Y3UaFYXLAM1PLdSHv27Fl//oUXHGl5EiqzCqjS+TkuQkhubMj/49PxlltQ3BDWXyfdty9bBLLgEuosDZIX67kcYVaV0zEZbbd8hjEcjIp48MGHwo4MIlnV3JFt+AG7QrFY44+csFBOP/30QpsSK6KiayQIh2xdBSJj7jScQCDNijeDCGGENIt0nRurp5gndyuuYz6CpO5pm5z529+arl27lpIVALwBAIP5jVMoFkdsK6zJqg8bNqy+aOHClGS8widrsvhYUbAsCP4xa5a5667JxTY2nhjcRfE7Twf/coLg/oIwQiztxpaIVJYgkuVVKoEgQ0V93QOefPIJs8WILShRSWT1HACswW+aQrG4ogUAXuFWVg1q9b8+8FerXoGsqKXF4ZQ5dX/yyafMXnvtZVpaultlXGmllcwtt9wS/RutEg8Wi0RMsWtJwvIwgRjFeBX5lqdXLjy8RZJ/0S5zZs8x48ePNy09WsrICu8Fyv26fEGhyHESJyyUfffZ1+ldophcEYmCekyfPt2MHr077+ZEOerII80nn3wSwzciLmrdZe7xGlMSwohhuV+51RQtQFZnS1AkzWBVUpL0LrGen83/zFx04YXmuyt/l7dJXBjqF4XivZioJzkrFDK+CwCfctLq+52+Zvbs2VHhOHFwiwqJascdd0yUMewIYfcjd7OQVtYdPLg+efJdnv4s1cRv6oK1EkmijGzKiKwqTiMpi8cnA5jFGcQ1FP4u2gW3OL7mmmvM4MGDQ/0lq8oeiloDeBcA9uA3SKFQpLiNElb4XOeSSy71SuhWX1ulZBbVlClTzI6jRhlyKnFBWLh/k9/DyQohLZTRo0fXZ82alaTn0ickELIUCKKRxPVagh8XO0PpTUju5yRYW96ispISGcXs2XPsPlaDBg6k5JRZV6QLeLvOBCoUzeE/6eB7UKgNNxxuFi5caJURCYti8uTJZquttkoIiBMSbl/juziWDLk/So8eLeaggw4ynLiixWV5wZNCsOok8qJWDyUp3nXDP4zEoptPP7iXDbL7QBl5Ix599FFz9NFHmxVXXJGTU0ZU1qqq1XAMcW9+QxQKRTm6A8ALVonceErszj388PSolQsWfGauv/56s9lmm2XEgxZUJxs3WlpOIQE+QuGkRT68ttLSvcUO0uMOBRISsqDXJeTF/VznMyU/MR77ZMZFitf2TyyEx6uvvmouuPBCs8kmm3BikiSMU+FhqBMAYGl+MxQKRWOcQkmlk1ewI488so7fF1522WU4DhOsg0g6ybUjO7QaMJ3ZAHAWAKwKAGsBwL2k+yPFj0q9/vrrm9NPP908/fTTnBssKMlYMinxc4RDLCsejxMWJS5KWCT58OOFF1+0bbLDDjuYJZZYgpOSFVa/UHeU/6drqxSKL4Z1AGARJRRUuqWXXtqsteZaQQkzguIKWQN4q+bIb3megfscqIarthPiCuRFt21G6d69m9lwww3rY8eMqd9z993mrbfe8tRTjhKiycio8GiUouueohV1+223mbFjx5qNNtrI9OjRIyMoqY1IXbFt8VvATXmjKBSKz4cpnEhKlDCQDPqFLs6rADAOAL7DE2VA/9NqAB9S4uLWFrfeUPr0Wbq+8SYb13/5y1+aiy6aaO6//35r6bz/wQfieFJrgWNWuFX0rKefNnfddZeZMGGC/Rh53cHrmt69e0uExMnK+uNEA6nbBwBwIQAM4Q2hUCi+GPbkhCURh1fMoJC4GvtXALAkT6wBVgeAcxhxOUIgG9Y1kpYePeorr7xSff31f1DfYfsd6gcccED92HHj6qee+htz9tlnm4svucRcedVV5tprr7Xjb9ddd5256uqrzXnnn29+85vfmHHjxpmf/exnZptttjHDhg41/fr1D7t8UoLi11xoe9B2ORYAVuYVVygUXw5wNwBcC8QPXA1ildFbVLg9zV4A0IMn0krgOjDsQr7IFD7mW1KWRsItHy7NhuFdX54HLTN+TH4DAIz0XxEoFIqvGFcEwiBEQZVyMgBsDwCdeMQvCCQ+TPcPAPA+yzMhMCq+jJFcPockJEXG0WKY0A6hC8zkLQC4BgBGA0B/XimFQvHVAmevFjClxAFjXNi4NQ/8FQGPI9vXE8HLnCTIJywZ4QiE1IwkhFVCTLjkA/PF8wAfAbev+g4A0IcXXqFQfL3Ywn98+4RXzHV5gK8RPQFgA7818H/7jezCuq6GQhaufh5BMsNZzfsA4AwA2Mkv01AoFIqm0NlbYP/hx9DG+4+FccnAVAB4yltluA4Mj8PCBZpoISL54N/5/jBZ7Ha+DQAvAcDjAHAPAFyLM5gAcBAA/BgABvlThhQKheIrQy+/NQtaQwN9N3eotxTxGo94X86vMv+ikwYKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhaJp/H89V9pGjhdF1AAAAABJRU5ErkJggg==)"><i class="hp-out"></i><i class="hp-fill"></i></span>
+</div>
+
+<script>
+/* ─────────────────────────────────────────────
+   여기만 채우면 됨.
+   type: 'video' → src에 mp4 경로 (poster 권장)
+   type: 'image' → src에 jpg/png 경로
+   src를 비워두면 자리표시 박스가 보임
+   ───────────────────────────────────────────── */
+const SLIDES = [
+  {
+    keyword: '유튜브 제작 대행',
+    items: [
+      {type:'video', src:'', poster:'', title:'제작대행 사례 1', caption:'브랜드명 · 캠페인명'},
+      {type:'video', src:'', poster:'', title:'제작대행 사례 2', caption:'브랜드명 · 캠페인명'},
+      {type:'video', src:'', poster:'', title:'제작대행 사례 3', caption:'브랜드명 · 캠페인명'}
+    ]
+  },
+  {
+    keyword: '유튜브 컨설팅',
+    items: [
+      {type:'image', src:'', title:'컨설팅 사례 1', caption:'채널명 · 구독자 성장'},
+      {type:'image', src:'', title:'컨설팅 사례 2', caption:'채널명 · 조회수 개선'},
+      {type:'image', src:'', title:'컨설팅 사례 3', caption:'채널명 · 포맷 리뉴얼'}
+    ]
+  },
+  {
+    keyword: '셀럽 제작 대행',
+    items: [
+      {type:'video', src:'', poster:'', title:'셀럽 채널 1', caption:'출연자명 · 채널명'},
+      {type:'video', src:'', poster:'', title:'셀럽 채널 2', caption:'출연자명 · 채널명'},
+      {type:'video', src:'', poster:'', title:'셀럽 채널 3', caption:'출연자명 · 채널명'}
+    ]
+  },
+  {
+    keyword: 'AI 영상 제작',
+    items: [
+      {type:'video', src:'', poster:'', title:'AI 영상 1', caption:'제작 방식 · 소요 기간'},
+      {type:'video', src:'', poster:'', title:'AI 영상 2', caption:'제작 방식 · 소요 기간'},
+      {type:'video', src:'', poster:'', title:'AI 영상 3', caption:'제작 방식 · 소요 기간'}
+    ]
+  }
+];
+const INTERVAL = 5000;
+
+/* 슬롯 문구 */
+const list=document.getElementById('slotList');
+const total=SLIDES.length;
+list.innerHTML=[...SLIDES,SLIDES[0]].map(s=>`<li>${s.keyword}</li>`).join('');
+
+/* 카드 */
+const track=document.getElementById('track');
+function media(it){
+  if(!it.src) return `<div class="ph"><span>${it.title}</span><code>${it.type} 소스 넣는 자리</code></div>`;
+  return it.type==='video'
+    ? `<video src="${it.src}" ${it.poster?`poster="${it.poster}"`:''} autoplay muted loop playsinline></video>`
+    : `<img src="${it.src}" alt="${it.title}">`;
+}
+function render(idx){
+  const set=SLIDES[idx].items;
+  const cards=[...set,...set,...set,...set].map(it=>`<article class="card">
+      <div class="media">${media(it)}</div>
+      <div class="meta"><b>${it.title}</b><p>${it.caption}</p></div>
+    </article>`).join('');
+  track.classList.add('out');
+  setTimeout(()=>{ track.innerHTML=cards; track.classList.remove('out'); },320);
+}
+
+/* 진행 표시 */
+const dots=document.getElementById('dots');
+dots.innerHTML=SLIDES.map((s,n)=>`<button aria-label="${s.keyword}" data-n="${n}"></button>`).join('');
+dots.onclick=e=>{ const n=e.target.dataset.n; if(n!==undefined) manual(+n); };
+
+/* 전환 */
+let i=0, lock=false;
+function paint(){
+  [...dots.children].forEach((d,n)=>d.classList.toggle('on',n===(i%total)));
+  const on=dots.children[i%total];
+  if(on){ const c=on.cloneNode(true); on.replaceWith(c); c.classList.add('on'); }
+  render(i%total);
+}
+function go(n){
+  if(lock) return; lock=true;
+  list.style.transition='transform .55s cubic-bezier(.65,0,.2,1)';
+  i=n; list.style.transform=`translateY(-${i*1.3}em)`;
+  paint();
+  setTimeout(()=>{
+    if(i>=total){ list.style.transition='none'; i=0; list.style.transform='translateY(0)'; }
+    lock=false;
+  },560);
+}
+let timer=setInterval(()=>go(i+1),INTERVAL);
+function manual(n){ clearInterval(timer); go(n<0?total-1:n); timer=setInterval(()=>go(i+1),INTERVAL); }
+next.onclick=()=>manual(i+1);
+prev.onclick=()=>manual(i-1);
+paint();
+
+/* ── orbit ── */
+(function(){
+  const wrap=document.getElementById('orbit');
+  if(!wrap) return;
+  const stage=document.getElementById('stage');
+  const nodesEl=document.getElementById('nodes');
+  const linksEl=document.getElementById('links');
+  const pinsEl=document.getElementById('pins');
+  const LABELS=['출연진 섭외','영상 기획','촬영','편집','채널 운영'];
+  const CX=340, CY=260, RX=230, RY=150, PULL=1.30;
+  const N=LABELS.length;
+  const NS='http://www.w3.org/2000/svg';
+
+  const nodes=LABELS.map((t,k)=>{
+    const el=document.createElement('div');
+    el.className='onode'; el.textContent=t;
+    nodesEl.appendChild(el);
+    const line=document.createElementNS(NS,'line'); line.setAttribute('class','link'); linksEl.appendChild(line);
+    const pin=document.createElementNS(NS,'circle'); pin.setAttribute('class','pin'); pin.setAttribute('r',4); pinsEl.appendChild(pin);
+    el.addEventListener('mouseenter',()=>{ hot=k; el.classList.add('hot'); line.classList.add('hot'); });
+    el.addEventListener('mouseleave',()=>{ hot=-1; el.classList.remove('hot'); line.classList.remove('hot'); });
+    return {el,line,pin,base:k/N*Math.PI*2};
+  });
+
+  let t=Math.PI*0.5, hot=-1, paused=false, drag=null, vel=0.014;
+  const pct=(v,max)=>v/max*100+'%';
+
+  function frame(){
+    if(!paused) t+=vel;
+    nodes.forEach(n=>{
+      const a=n.base+t;
+      const px=CX+Math.cos(a)*RX, py=CY+Math.sin(a)*RY;              // 궤도 위 점
+      const nx=CX+Math.cos(a)*RX*PULL, ny=CY+Math.sin(a)*RY*PULL;    // 라벨 위치
+      const depth=(Math.sin(a)+1)/2;                                  // 0 뒤 → 1 앞
+      n.pin.setAttribute('cx',px); n.pin.setAttribute('cy',py);
+      n.pin.setAttribute('r',3+depth*2.2);
+      n.line.setAttribute('x1',px); n.line.setAttribute('y1',py);
+      n.line.setAttribute('x2',nx); n.line.setAttribute('y2',ny);
+      n.el.style.left=pct(nx,680); n.el.style.top=pct(ny,500);
+      n.el.style.transform=`translate(-50%,-50%) scale(${(0.84+depth*0.22).toFixed(3)})`;
+      n.el.style.opacity=(0.55+depth*0.45).toFixed(3);
+      n.el.style.zIndex=Math.round(depth*30);
+      n.line.style.opacity=(0.35+depth*0.65).toFixed(3);
+    });
+    requestAnimationFrame(frame);
+  }
+  frame();
+
+  /* 호버 시 정지 + 마우스 기울기 */
+  wrap.addEventListener('mouseenter',()=>paused=true);
+  wrap.addEventListener('mouseleave',()=>{ paused=false; stage.style.transform=''; });
+  wrap.addEventListener('mousemove',e=>{
+    if(drag!==null) return;
+    const r=wrap.getBoundingClientRect();
+    const dx=(e.clientX-r.left)/r.width-.5, dy=(e.clientY-r.top)/r.height-.5;
+    stage.style.transition='transform .18s ease-out';
+    stage.style.transform=`rotateX(${(-dy*11).toFixed(2)}deg) rotateY(${(dx*13).toFixed(2)}deg)`;
+  });
+
+  /* 드래그로 직접 돌리기 */
+  const start=x=>{ drag=x; paused=true; };
+  const move=x=>{ if(drag===null) return; t+=(x-drag)*0.006; drag=x; };
+  const end=()=>{ drag=null; paused=false; };
+  wrap.addEventListener('pointerdown',e=>{ start(e.clientX); wrap.setPointerCapture(e.pointerId); });
+  wrap.addEventListener('pointermove',e=>move(e.clientX));
+  wrap.addEventListener('pointerup',end);
+  wrap.addEventListener('pointercancel',end);
+
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){ vel=0; }
+})();
+
+
+/* ── 숫자 카운트업 ── */
+(function(){
+  const units={'5000000':'회','3850':'%','200000':'배'};
+  const els=[...document.querySelectorAll('.band strong')];
+  const fmt=n=>{
+    if(n>=10000){
+      const man=n/10000;
+      return (Number.isInteger(man)?man.toLocaleString('en-US'):man.toFixed(1))+'만';
+    }
+    return n.toLocaleString('en-US');
+  };
+  const run=el=>{
+    const to=+el.dataset.to, unit=units[el.dataset.to]||'';
+    const dur=1600, t0=performance.now();
+    const step=now=>{
+      const p=Math.min((now-t0)/dur,1);
+      const e=1-Math.pow(1-p,3);
+      el.innerHTML=fmt(Math.floor(to*e))+`<em>${unit}</em>`;
+      if(p<1) requestAnimationFrame(step);
+      else el.innerHTML=fmt(to)+`<em>${unit}</em>`;
+    };
+    requestAnimationFrame(step);
+  };
+  const io=new IntersectionObserver(en=>en.forEach(x=>{
+    if(x.isIntersecting){ run(x.target); io.unobserve(x.target); }
+  }),{threshold:.4});
+  els.forEach(el=>io.observe(el));
+})();
+
+/* ── 고객 후기 ── */
+(function(){
+  /* ⚠ 워딩·실제 수치 확인 필요 (전 항목) */
+  const VOICES=[
+    ['헬스케어 전문기업 C사','구독자가 한 명도 없던 채널이 <b>20만 명 규모로 성장했어요.</b> 기획부터 편집까지 전문가가 맡아주니 성과도 퀄리티도 확 달라졌어요.'],
+    ['제약 바이오 기업 J사','<b>평균 조회수가 3,850% 상승했어요.</b> 기획부터 촬영, 편집, 운영까지 한 번에 맡아주니 유튜브 운영이 훨씬 수월해졌고, 영상 포맷도 다양해졌어요.'],
+    ['뷰티 대기업 I사','전문 장비를 갖춘 전문가들이 함께하니 라이브 콘텐츠와 같은 새로운 포맷도 쉽게 시도해보면서 <b>영상 최다 조회수 500만 회를 달성했어요.</b>'],
+    ['대기업 그룹 H사','온드 크리에이티브와 함께하면 <b>기획부터 운영까지 한 번에 해결되어</b> 훨씬 수월해요. 특히 애니메이션이나 글로벌 포맷 등 다양한 형태를 빠르면서도 전문적으로 기획해주셔서 여러 방식을 테스트하며 채널을 성장시킬 수 있었어요.'],
+    ['대기업 P사','진행 중인 사업 내용이 다소 복잡하고 어려운 편인데, 난해한 기술도 높은 이해도를 바탕으로 <b>쉽고 재미있게 풀어주셨어요.</b> 덕분에 유튜브 영상을 통해 소비자에게 사업을 쉽게 설명하고 더욱 친근하게 다가갈 수 있게 되었어요.']
+  ];
+
+  const t=document.getElementById('vtrack');
+  if(!t) return;
+  t.innerHTML=[...VOICES,...VOICES].map(([n,c])=>
+    `<article class="vcard"><h4>${n}</h4><p>${c}</p></article>`).join('');
+})();
+
+/* ── 제작 프로세스 탭 ── */
+(function(){
+  /* media: '' 이면 자리표시 박스 노출. type은 'image' 또는 'video' */
+  const STEPS=[
+    {name:'컨설팅',      desc:'실무진과의 전문적이고 세심한 미팅을 통해 니즈를 파악합니다.', type:'image', media:''},
+    {name:'기획',        desc:'레퍼런스 조사와 스토리보드 제작으로 세심한 작업 계획을 수립합니다.', type:'image', media:''},
+    {name:'제작',        desc:'결과물을 미리 유추할 수 있도록 중간 과정을 공유하고 함께 검수합니다.', type:'video', media:'', studio:[
+      /* media 채우면 이미지·영상으로 교체됨 */
+      {label:'촬영', type:'image', media:''},
+      {label:'조명', type:'image', media:''},
+      {label:'음향', type:'image', media:''},
+      {label:'미술', type:'image', media:''}
+    ]},
+    {name:'편집 및 후가공',desc:'영상이 돋보이도록 자막, 효과, 색보정 등 후작업을 진행합니다.', type:'video', media:''},
+    {name:'납품',        desc:'완성된 영상 전달 후 반영구적인 데이터 보존과 A/S를 제공합니다.', type:'image', media:''}
+  ];
+  const stepsEl=document.getElementById('steps'), panel=document.getElementById('panel');
+  if(!stepsEl) return;
+  let cur=0;
+
+  stepsEl.innerHTML=STEPS.map((s,i)=>
+    `<button class="step${i===0?' on':''}" data-i="${i}"><em>${i+1}</em>${s.name}</button>`).join('');
+
+  function media(s,i){
+    if(!s.media) return `<div class="ph">${s.name} ${s.type==='video'?'영상':'이미지'}<br><code>${s.type} 소스 넣는 자리</code></div>`;
+    return s.type==='video'
+      ? `<video src="${s.media}" autoplay muted loop playsinline></video>`
+      : `<img src="${s.media}" alt="${s.name}">`;
+  }
+  function draw(i){
+    const s=STEPS[i];
+    if(s.studio){ drawStudio(s); return; }
+    panel.classList.remove('wide');
+    panel.innerHTML=`
+      <div class="panel-media">${media(s,i)}</div>
+      <div class="panel-body">
+        <span class="tag">STEP ${String(i+1).padStart(2,'0')}</span>
+        <h3>${s.name}</h3>
+        <p>${s.desc}</p>
+        <div class="bar"><i style="width:${(i+1)/STEPS.length*100}%"></i></div>
+      </div>`;
+  }
+  function go(i){
+    if(i===cur) return;
+    cur=i;
+    [...stepsEl.children].forEach((b,n)=>b.classList.toggle('on',n===i));
+    panel.classList.add('out');
+    setTimeout(()=>{ draw(i); panel.classList.remove('out'); },300);
+  }
+  function drawStudio(s){
+    panel.classList.add('wide');
+    const cards=s.studio.map(c=>`<div class="slide">${
+      c.media
+        ? (c.type==='video'
+            ? `<video src="${c.media}" autoplay muted loop playsinline></video>`
+            : `<img src="${c.media}" alt="${c.label}">`)
+        : ''
+    }<span>${c.label}</span></div>`).join('');
+    panel.innerHTML=`
+      <div class="studio">
+        <h3>전문 <b>스튜디오</b>에서 완성되는 콘텐츠의 차이</h3>
+        <p class="desc">OND 크리에이티브는 자체 스튜디오와 전문 촬영 장비를 보유하고 있습니다.<br>
+        토크 콘텐츠부터 인터뷰, 브랜디드 콘텐츠, 라이브 촬영까지<br>
+        다양한 형태의 콘텐츠를 안정적인 제작 환경에서 진행합니다.</p>
+        <div class="stage">
+          <div class="stage-view"><div class="stage-track" id="stageTrack">${cards}</div></div>
+        </div>
+        <div class="stage-nav">
+          <button id="sPrev" aria-label="이전">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <span class="count"><b id="sNow">01</b> <i>/ ${String(s.studio.length).padStart(2,'0')}</i></span>
+          <button id="sNext" aria-label="다음">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>`;
+
+    const track=document.getElementById('stageTrack');
+    const slides=[...track.children];
+    const now=document.getElementById('sNow');
+    const prevB=document.getElementById('sPrev'), nextB=document.getElementById('sNext');
+    let k=0;
+    const perView=()=>innerWidth<=560?1:innerWidth<=820?2:3;
+    const maxK=()=>Math.max(0,slides.length-perView());
+    function paint(){
+      k=Math.min(k,maxK());
+      const w=slides[0].getBoundingClientRect().width;
+      const gap=parseFloat(getComputedStyle(track).gap)||0;
+      track.style.transform=`translateX(${-k*(w+gap)}px)`;
+      now.textContent=String(k+1).padStart(2,'0');
+      prevB.disabled=k===0; nextB.disabled=k>=maxK();
+      slides.forEach((el,n)=>el.classList.toggle('dim',n<k||n>=k+perView()));
+    }
+    prevB.onclick=()=>{ k=Math.max(0,k-1); paint(); };
+    nextB.onclick=()=>{ k=Math.min(maxK(),k+1); paint(); };
+    addEventListener('resize',paint,{passive:true});
+    paint();
+  }
+
+  stepsEl.addEventListener('click',e=>{
+    const b=e.target.closest('.step'); if(b) go(+b.dataset.i);
+  });
+  draw(0);
+})();
+
+/* ── 산업군별 제작 사례 ── */
+(function(){
+  /* 각 산업군당 6개(3×2). thumb 채우면 이미지·영상으로 교체 */
+  const WORKS={
+    '뷰티/패션':[
+      ['브랜드 뷰티 채널 리브랜딩','뷰티 대기업 I사','12:04'],
+      ['신제품 런칭 숏폼 시리즈','브랜드명','0:42'],
+      ['메이크업 튜토리얼 콘텐츠','브랜드명','08:15'],
+      ['시즌 컬렉션 브랜드 필름','브랜드명','02:30'],
+      ['앰버서더 인터뷰 시리즈','브랜드명','14:22'],
+      ['제품 사용 리얼 리뷰','브랜드명','09:48']
+    ],
+    'B2B':[
+      ['솔루션 소개 브랜디드 콘텐츠','JNPMEDI','10:31'],
+      ['기업 채널 올인원 운영','대기업 그룹 H사','16:07'],
+      ['임직원 인터뷰 시리즈','브랜드명','11:52'],
+      ['산업 트렌드 지식 콘텐츠','브랜드명','18:20'],
+      ['채용 브랜딩 영상','브랜드명','05:14'],
+      ['고객사 도입 사례 영상','브랜드명','07:36']
+    ],
+    '금융':[
+      ['금융 지식 콘텐츠 시리즈','브랜드명','19:03'],
+      ['노후 준비 인터뷰 콘텐츠','브랜드명','22:41'],
+      ['재테크 입문 가이드','브랜드명','15:28'],
+      ['보험 상식 바로잡기','브랜드명','13:10'],
+      ['전문가 대담 콘텐츠','브랜드명','24:55'],
+      ['금융 상품 쉽게 풀기','브랜드명','08:44']
+    ],
+    '공공기관':[
+      ['정책 홍보 캠페인 영상','기관명','03:12'],
+      ['기관 소개 브랜드 필름','기관명','04:40'],
+      ['시민 참여 인터뷰','기관명','06:25'],
+      ['생활 안전 정보 콘텐츠','기관명','07:58'],
+      ['사업 성과 리포트 영상','기관명','05:33'],
+      ['공익 캠페인 숏폼','기관명','0:51']
+    ],
+    '도서제휴':[
+      ['저자 인터뷰 콘텐츠','출판사명','25:16'],
+      ['북 리뷰 시리즈 제작','출판사명','17:42'],
+      ['신간 소개 숏폼','출판사명','0:47'],
+      ['작가와의 대담','출판사명','31:09'],
+      ['책 속 지식 요약 콘텐츠','출판사명','12:35'],
+      ['출간 기념 라이브','출판사명','48:20']
+    ],
+    '건강기능식품':[
+      ['전문가 출연 신뢰 콘텐츠','헬스케어 전문기업 C사','14:50'],
+      ['제품 사용 리얼 후기 영상','세라젬','09:22'],
+      ['건강 상식 시리즈','브랜드명','11:07'],
+      ['성분 바로 알기 콘텐츠','브랜드명','08:19'],
+      ['의료진 인터뷰','브랜드명','16:44'],
+      ['생활 루틴 숏폼','브랜드명','0:39']
+    ],
+    '셀럽':[
+      ['고은언니 한고은 채널 제작','한고은','18:26'],
+      ['강지영의 동그라미','강지영','21:03'],
+      ['정영진의 나쁜질문','정영진','27:38'],
+      ['셀럽 채널 기획·운영','출연자명','15:11'],
+      ['셀럽 브랜디드 콘텐츠','출연자명','10:55'],
+      ['셀럽 라이브 콘텐츠','출연자명','52:14']
+    ]
+  };
+  const CATS=Object.keys(WORKS);
+  const tabsEl=document.getElementById('tabs'), grid=document.getElementById('pgrid');
+  if(!tabsEl) return;
+  let cur=0;
+
+  tabsEl.innerHTML=CATS.map((c,i)=>
+    `<button class="tab${i===0?' on':''}" data-i="${i}">${c}</button>`).join('');
+
+  const card=([title,client,dur],cat)=>`<article class="pitem">
+      <div class="pthumb"><div class="ph">${cat}<br><code>썸네일 소스</code></div><span class="dur">${dur}</span></div>
+      <div class="pmeta"><b>${title}</b><p>${client}<span>·</span>OND 제작</p></div>
+    </article>`;
+
+  function draw(i){
+    const cat=CATS[i];
+    grid.innerHTML=WORKS[cat].slice(0,6).map(w=>card(w,cat)).join('');
+  }
+  tabsEl.addEventListener('click',e=>{
+    const b=e.target.closest('.tab'); if(!b) return;
+    const i=+b.dataset.i; if(i===cur) return;
+    cur=i;
+    [...tabsEl.children].forEach((el,n)=>el.classList.toggle('on',n===i));
+    b.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+    grid.classList.add('out');
+    setTimeout(()=>{ draw(i); grid.classList.remove('out'); },280);
+  });
+  draw(0);
+})();
+
+/* ── 셀럽 채널 슬라이드 (좌우 자동 전환) ── */
+(function(){
+  /* media 채우면 이미지·영상으로 교체됨. type: 'image' 또는 'video' */
+  const FS2=[
+    {type:'image', media:'', label:'셀럽 채널 1'},
+    {type:'image', media:'', label:'셀럽 채널 2'},
+    {type:'image', media:'', label:'셀럽 채널 3'}
+  ];
+  const track=document.getElementById('fslideTrack2'), dotsEl=document.getElementById('fslideDots2');
+  if(!track) return;
+  const media=it=>{
+    if(!it.media) return `<div class="ph">${it.label}<br><code>${it.type} 소스 넣는 자리</code></div>`;
+    return it.type==='video'
+      ? `<video src="${it.media}" autoplay muted loop playsinline></video>`
+      : `<img src="${it.media}" alt="${it.label}">`;
+  };
+  track.innerHTML=FS2.map(it=>`<div class="fs-item">${media(it)}</div>`).join('');
+  dotsEl.innerHTML=FS2.map((_,n)=>`<span data-n="${n}"></span>`).join('');
+  const dots=[...dotsEl.children];
+  let cur=0, timer;
+  function paint(){
+    track.style.transform=`translateX(-${cur*100}%)`;
+    dots.forEach((d,n)=>d.classList.toggle('on',n===cur));
+  }
+  function restart(){ clearInterval(timer); timer=setInterval(()=>{ cur=(cur+1)%FS2.length; paint(); },3400); }
+  dotsEl.addEventListener('click',e=>{
+    const n=e.target.dataset.n; if(n===undefined) return;
+    cur=+n; paint(); restart();
+  });
+  track.addEventListener('click',()=>{ cur=(cur+1)%FS2.length; paint(); restart(); });
+  paint(); restart();
+})();
+
+/* ── 클라이언트 로고 ── */
+(function(){
+  /* logo에 이미지 경로 넣으면 텍스트 대신 로고 노출 */
+  const CLIENTS=[
+    {name:'JNPMEDI', logo:''},
+    {name:'POSCO HOLDINGS', logo:''},
+    {name:'고은언니 한고은', logo:''},
+    {name:'강지영의 동그라미', logo:''},
+    {name:'정영진의 나쁜질문', logo:''},
+    {name:'세라젬', logo:''},
+    {name:'Hanwha', logo:''}
+  ];
+  const t=document.getElementById('ltrack');
+  if(!t) return;
+  t.innerHTML=[...CLIENTS,...CLIENTS,...CLIENTS].map(c=>
+    `<div class="lbox">
+       <span class="lname">${c.name}</span>
+       <span class="lmark">${c.logo
+          ? `<img src="${c.logo}" alt="${c.name} 로고">`
+          : `<span class="slot">로고</span>`}</span>
+     </div>`).join('');
+})();
+
+/* ── 후기 · 폼 ── */
+(function(){
+  /* 메일 주소 복사 */
+  const mb=document.getElementById('mailbtn');
+  if(mb) mb.addEventListener('click',()=>{
+    const v=mb.dataset.mail;
+    (navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject())
+      .then(()=>{
+        const html=mb.innerHTML;
+        mb.classList.add('done');
+        mb.innerHTML=v+' <small>복사되었습니다</small>';
+        setTimeout(()=>{ mb.classList.remove('done'); mb.innerHTML=html; },1800);
+      }).catch(()=>{});
+  });
+
+  /* 동의 체크 시 문의 버튼 활성화 */
+  const ag=document.getElementById('agree'), sb=document.getElementById('submit');
+  if(ag&&sb) ag.addEventListener('change',()=>sb.disabled=!ag.checked);
+})();
+
+/* fab / nav */
+const fabSide=document.getElementById('fabSide'), fabBar=document.getElementById('fabBar'), nav=document.getElementById('nav');
+fabSide.classList.add('on');
+fabBar.classList.add('on');
+let last=0;
+addEventListener('scroll',()=>{
+  const y=scrollY;
+  nav.classList.toggle('solid',y>40);
+  last=y;
+},{passive:true});
+
+/* ── 스크롤 리빌 ── */
+(function(){
+  const els=document.querySelectorAll('.reveal');
+  if(!els.length) return;
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){ en.target.classList.add('on'); io.unobserve(en.target); }
+    });
+  },{threshold:.15, rootMargin:'0px 0px -8% 0px'});
+  els.forEach(el=>io.observe(el));
+})();
+
+/* ── 커스텀 커서 ── */
+(function(){
+  if(!matchMedia('(pointer:fine)').matches) return;
+  const cur=document.getElementById('cursor');
+  if(!cur) return;
+  document.documentElement.classList.add('cur-on');
+  cur.style.display='block';
+
+  const MEDIA_SEL='.card,.media,.b-media,.pthumb,.fmedia,.fslide,.panel-media,.slide,.stage,.b-orbit,.globe';
+  const LINK_SEL='a,button,select,input[type="checkbox"],.tab,.step,label.agree,.arw,.dots button,.stage-nav button';
+
+  /* 클릭할수록 커서가 커지는 이스터에그 */
+  let clicks=parseInt(localStorage.getItem('cursorClicks')||'0',10)||0;
+  let grow=Math.min(1+clicks*0.025,1.9);
+
+  addEventListener('pointermove',e=>{
+    cur.style.transform=`translate3d(${e.clientX}px,${e.clientY}px,0) scale(${grow})`;
+    const media=e.target.closest(MEDIA_SEL);
+    const link=!media&&e.target.closest(LINK_SEL);
+    cur.classList.toggle('on-media',!!media);
+    cur.classList.toggle('on-link',!!link);
+  },{passive:true});
+
+  addEventListener('pointerdown',e=>{
+    cur.classList.add('down');
+    if(e.target.closest(LINK_SEL)){
+      clicks++;
+      localStorage.setItem('cursorClicks',clicks);
+      grow=Math.min(1+clicks*0.025,1.9);
+    }
+    const b=document.createElement('div');
+    b.className='cur-burst';
+    b.style.left=e.clientX+'px';
+    b.style.top=e.clientY+'px';
+    b.innerHTML=Array.from({length:8},(_,i)=>`<i style="--a:${i*45}deg"></i>`).join('');
+    document.body.appendChild(b);
+    setTimeout(()=>b.remove(),520);
+  },{passive:true});
+  addEventListener('pointerup',()=>cur.classList.remove('down'),{passive:true});
+
+  addEventListener('mouseleave',()=>cur.style.display='none');
+  addEventListener('mouseenter',()=>cur.style.display='block');
+})();
+</script>
